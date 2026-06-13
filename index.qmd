@@ -1,6 +1,6 @@
 # Introduction {.unnumbered}
 
-This is a website dedicated to the creation of morphological transducer for Tsova Tush during the CauLaGe Zemo Alvani Field Research (ZAFieR) Station from August 18 to 26, 2026.
+This is a website dedicated to the creation of morphological transducer for Tsova Tush during the [CauLaGe Zemo Alvani Field Research](https://zafier.gitpages.huma-num.fr/homepage/index.html) (ZAFieR) Station from August 18 to 26, 2026.
 
 ## List of programs {.unnumbered}
 

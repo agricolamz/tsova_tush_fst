@@ -1,0 +1,10 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Transliteration
+
+It is hard to work since we have multiple orthographies to work with: Georgian, Latin, IPA, Cyrillic.
+
