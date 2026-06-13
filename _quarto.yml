@@ -1,0 +1,29 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Tsova Tush morphological analyzer with FST"
+  author: 
+  - name: G. A. Moroz
+  repo-url: https://github.com/agricolamz/tsova_tush_fst/
+  chapters:
+    - index.qmd
+    - 01_introduction_to_transducers.qmd
+    - references.qmd
+
+callout-appearance: simple
+callout-icon: false
+bibliography: references.bib
+execute: 
+  echo: false
+  warning: false
+fig-align: center
+
+format:
+  html:
+    theme: cosmo
+    lang: en
+    page-layout: full
+    css: styles.css
+    df-print: paged
