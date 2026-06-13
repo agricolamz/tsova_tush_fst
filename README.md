@@ -1,1 +1,1 @@
-В данном репозитории собраны материалы по курсу Т. Б. Казаковой и Г. А. Мороза ‘Моделирование морфологии трансдьюссерами’ 2024-2025
+This is a website dedicated to the creation of morphological transducer for Tsova Tush during the [CauLaGe Zemo Alvani Field Research](https://zafier.gitpages.huma-num.fr/homepage/index.html) (ZAFieR) Station from August 18 to 26, 2026.
