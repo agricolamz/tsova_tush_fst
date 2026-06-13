@@ -6,3 +6,4 @@ task_tests/secret.txt
 hws*
 
 **/*.quarto_ipynb
+*.~lock.*
