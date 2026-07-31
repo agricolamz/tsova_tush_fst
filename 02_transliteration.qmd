@@ -8,3 +8,31 @@ editor_options:
 
 It is hard to work since we have multiple orthographies to work with: Georgian, Latin, IPA, Cyrillic.
 
+## Georgian layout
+
+I find it useful to install Georgian layout on your PC.
+
+```{r}
+#| fig-cap: "Georgian layout"
+#| echo: false
+
+knitr::include_graphics("images/georgian-qwerty-layout.png")
+```
+
+It mostly straitforward except several pecularities:
+
+- ejective letters are mostly default, so
+    - /pʰ/ ფ (letter pani) is `f` 
+    - /tʰ/ თ (letter tani) is `Shift + t`
+    - /kʰ/ ქ (letter kani) is `q`
+    - /t͡sʰ/ ც (letter tsani) is `c`
+    - /t͡ʃʰ/ ჩ (letter chini) is `Shift + c`
+    - but
+      - /t͡s'/ ც (letter ts'ani) is `w`
+      - /t͡ʃ'/ ჭ (letter ch'ari) is `Shift + w`
+- /dz/ ძ (letter dzili) is `Shift + z`
+- /dʒ/ ჯ (letter jani) is `j`
+- /ʒ/ ჟ (letter zhani) is `Shift + j`
+- /ɣ ~ ʁ/ ღ (letter ghani) is `Shift + r`
+- /x ~ χ/ ხ (letter khani) is `Shift + x`
+- /q'/ ყ (letter q'ari) is `y`

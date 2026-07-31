@@ -10,6 +10,7 @@ book:
   chapters:
     - index.qmd
     - 01_introduction_to_transducers.qmd
+    - 02_transliteration.qmd
     - references.qmd
 
 callout-appearance: simple

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; What is FST? – Tsova Tush morphological analyzer with FST</title>
+<title>2&nbsp; Transliteration – Tsova Tush morphological analyzer with FST</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_transliteration.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./01_introduction_to_transducers.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -72,6 +72,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -86,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_introduction_to_transducers.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_transliteration.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Transliteration</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -122,13 +124,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_introduction_to_transducers.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01_introduction_to_transducers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_transliteration.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_transliteration.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Transliteration</span></span></a>
   </div>
 </li>
@@ -143,20 +145,26 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#georgian-layout" id="toc-georgian-layout" class="nav-link active" data-scroll-target="#georgian-layout"><span class="header-section-number">2.1</span> Georgian layout</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Transliteration</span></h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -168,8 +176,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>It is hard to work since we have multiple orthographies to work with: Georgian, Latin, IPA, Cyrillic.</p>
+<section id="georgian-layout" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="georgian-layout"><span class="header-section-number">2.1</span> Georgian layout</h2>
+<p>I find it useful to install Georgian layout on your PC.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/georgian-qwerty-layout.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Georgian layout</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>It mostly straitforward except several pecularities:</p>
+<ul>
+<li>ejective letters are mostly default, so
+<ul>
+<li>/pʰ/ ფ (letter pani) is <code>f</code></li>
+<li>/tʰ/ თ (letter tani) is <code>Shift + t</code></li>
+<li>/kʰ/ ქ (letter kani) is <code>q</code></li>
+<li>/t͡sʰ/ ც (letter tsani) is <code>c</code></li>
+<li>/t͡ʃʰ/ ჩ (letter chini) is <code>Shift + c</code></li>
+<li>but
+<ul>
+<li>/t͡s’/ ც (letter ts’ani) is <code>w</code></li>
+<li>/t͡ʃ’/ ჭ (letter ch’ari) is <code>Shift + w</code></li>
+</ul></li>
+</ul></li>
+<li>/dz/ ძ (letter dzili) is <code>Shift + z</code></li>
+<li>/dʒ/ ჯ (letter jani) is <code>j</code></li>
+<li>/ʒ/ ჟ (letter zhani) is <code>Shift + j</code></li>
+<li>/ɣ ~ ʁ/ ღ (letter ghani) is <code>Shift + r</code></li>
+<li>/x ~ χ/ ხ (letter khani) is <code>Shift + x</code></li>
+<li>/q’/ ყ (letter q’ari) is <code>y</code></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -572,15 +617,15 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./01_introduction_to_transducers.html" class="pagination-link" aria-label="What is FST?">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_transliteration.html" class="pagination-link" aria-label="Transliteration">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Transliteration</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

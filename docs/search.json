@@ -14,9 +14,29 @@
     "href": "index.html#list-of-programs",
     "title": "Tsova Tush morphological analyzer with FST",
     "section": "List of programs",
-    "text": "List of programs\n```{shell}\nlexd -V\n```\n\n\nlexd 1.3.5\n\n\n```{shell}\nhfst-twolc -V\n```\n\n\n\nhfst-twolc 0 (hfst 3.17.1)\nCopyright (C) 2010 University of Helsinki,\nLicense GPLv3: GNU GPL version 3 \n&lt;http://gnu.org/licenses/gpl.html&gt;\nThis is free software: you are free to change and \nredistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\n\n\n```{shell}\ncg3 -V\n```\n\n\nVISL CG-3 Disambiguator version 1.6.6.13898\nCopyright (C) 2007-2025 GrammarSoft ApS. Licensed under GPLv3+\n\n\n```{shell}\ngit -v\n```\n\n\ngit version 2.43.0",
+    "text": "List of programs\n```{shell}\nlexd -V\n```\n\n\nlexd 1.3.5\n\n\n```{shell}\nhfst-twolc -V\n```\n\n\n\nhfst-twolc 0 (hfst 3.17.1)\nCopyright (C) 2010 University of Helsinki,\nLicense GPLv3: GNU GPL version 3 \n&lt;http://gnu.org/licenses/gpl.html&gt;\nThis is free software: you are free to change and \nredistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\n\n\n```{shell}\ncg3 -V\n```\n\n\nVISL CG-3 Disambiguator version 1.6.7.13898\nCopyright (C) 2007-2025 GrammarSoft ApS. Licensed under GPLv3+\n\n\n```{shell}\ngit -v\n```\n\n\ngit version 2.43.0",
     "crumbs": [
       "Introduction"
+    ]
+  },
+  {
+    "objectID": "02_transliteration.html",
+    "href": "02_transliteration.html",
+    "title": "2  Transliteration",
+    "section": "",
+    "text": "2.1 Georgian layout\nIt is hard to work since we have multiple orthographies to work with: Georgian, Latin, IPA, Cyrillic.\nI find it useful to install Georgian layout on your PC.\nGeorgian layout\nIt mostly straitforward except several pecularities:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
+    ]
+  },
+  {
+    "objectID": "02_transliteration.html#georgian-layout",
+    "href": "02_transliteration.html#georgian-layout",
+    "title": "2  Transliteration",
+    "section": "",
+    "text": "ejective letters are mostly default, so\n\n/pʰ/ ფ (letter pani) is f\n/tʰ/ თ (letter tani) is Shift + t\n/kʰ/ ქ (letter kani) is q\n/t͡sʰ/ ც (letter tsani) is c\n/t͡ʃʰ/ ჩ (letter chini) is Shift + c\nbut\n\n/t͡s’/ ც (letter ts’ani) is w\n/t͡ʃ’/ ჭ (letter ch’ari) is Shift + w\n\n\n/dz/ ძ (letter dzili) is Shift + z\n/dʒ/ ჯ (letter jani) is j\n/ʒ/ ჟ (letter zhani) is Shift + j\n/ɣ ~ ʁ/ ღ (letter ghani) is Shift + r\n/x ~ χ/ ხ (letter khani) is Shift + x\n/q’/ ყ (letter q’ari) is y",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
     ]
   }
 ]
