@@ -19,7 +19,7 @@ I find it useful to install Georgian layout on your PC.
 knitr::include_graphics("images/georgian-qwerty-layout.png")
 ```
 
-It mostly straitforward except several pecularities:
+Unlike Russian layout Georgian to Latin correspondences are mostly straitforward except several pecularities:
 
 - ejective letters are mostly default, so
     - /pʰ/ ფ (letter pani) is `f` 
@@ -31,8 +31,8 @@ It mostly straitforward except several pecularities:
       - /t͡s'/ ც (letter ts'ani) is `w`
       - /t͡ʃ'/ ჭ (letter ch'ari) is `Shift + w`
 - /dz/ ძ (letter dzili) is `Shift + z`
-- /dʒ/ ჯ (letter jani) is `j`
 - /ʒ/ ჟ (letter zhani) is `Shift + j`
+- /ʃ/ შ (letter shini) is `Shift + s`
 - /ɣ ~ ʁ/ ღ (letter ghani) is `Shift + r`
 - /x ~ χ/ ხ (letter khani) is `Shift + x`
 - /q'/ ყ (letter q'ari) is `y`
