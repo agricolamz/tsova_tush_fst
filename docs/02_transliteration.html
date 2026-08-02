@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -151,6 +170,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#georgian-layout" id="toc-georgian-layout" class="nav-link active" data-scroll-target="#georgian-layout"><span class="header-section-number">2.1</span> Georgian layout</a></li>
+  <li><a href="#russian-layout" id="toc-russian-layout" class="nav-link" data-scroll-target="#russian-layout"><span class="header-section-number">2.2</span> Russian layout</a></li>
   </ul>
 </nav>
     </div>
@@ -185,21 +205,21 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/georgian-qwerty-layout.png" class="img-fluid figure-img" width="600"></p>
-<figcaption>Georgian layout</figcaption>
+<figcaption>Georgian layout (Mac version)</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Unlike Russian layout Georgian to Latin correspondences are mostly straitforward except several pecularities:</p>
 <ul>
-<li>ejective letters are mostly default, so
+<li>ejective letters are mostly default, but
 <ul>
 <li>/pʰ/ ფ (letter pani) is <code>f</code></li>
 <li>/tʰ/ თ (letter tani) is <code>Shift + t</code></li>
 <li>/kʰ/ ქ (letter kani) is <code>q</code></li>
 <li>/t͡sʰ/ ც (letter tsani) is <code>c</code></li>
 <li>/t͡ʃʰ/ ჩ (letter chini) is <code>Shift + c</code></li>
-<li>but
+<li>with exceptions of
 <ul>
 <li>/t͡s’/ ც (letter ts’ani) is <code>w</code></li>
 <li>/t͡ʃ’/ ჭ (letter ch’ari) is <code>Shift + w</code></li>
@@ -212,8 +232,27 @@ ul.task-list li input[type="checkbox"] {
 <li>/x ~ χ/ ხ (letter khani) is <code>Shift + x</code></li>
 <li>/q’/ ყ (letter q’ari) is <code>y</code></li>
 </ul>
+</section>
+<section id="russian-layout" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="russian-layout"><span class="header-section-number">2.2</span> Russian layout</h2>
+<p>In case you will need to cite something from <span class="citation" data-cites="desheriev53">(<a href="references.html#ref-desheriev53" role="doc-biblioref">Desheriev 1953</a>)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/russian-qwerty-layout.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>Russian layout (Mac version)</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-desheriev53" class="csl-entry" role="listitem">
+Desheriev, Yunus D. 1953. <em>Bacbijskij Jazyk. <span>F</span>onetika, Morfologija, Sintaksis, Leksika [<span>T</span>he <span>B</span>atsbi Language: <span>P</span>honetics, Morphology, Syntax, Lexicon]</em>. Akademija Nauk SSSR, Institut Jazykoznanija.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

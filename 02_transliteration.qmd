@@ -13,7 +13,7 @@ It is hard to work since we have multiple orthographies to work with: Georgian, 
 I find it useful to install Georgian layout on your PC.
 
 ```{r}
-#| fig-cap: "Georgian layout"
+#| fig-cap: "Georgian layout (Mac version)"
 #| echo: false
 
 knitr::include_graphics("images/georgian-qwerty-layout.png")
@@ -21,13 +21,13 @@ knitr::include_graphics("images/georgian-qwerty-layout.png")
 
 Unlike Russian layout Georgian to Latin correspondences are mostly straitforward except several pecularities:
 
-- ejective letters are mostly default, so
+- ejective letters are mostly default, but
     - /pʰ/ ფ (letter pani) is `f` 
     - /tʰ/ თ (letter tani) is `Shift + t`
     - /kʰ/ ქ (letter kani) is `q`
     - /t͡sʰ/ ც (letter tsani) is `c`
     - /t͡ʃʰ/ ჩ (letter chini) is `Shift + c`
-    - but
+    - with exceptions of
       - /t͡s'/ ც (letter ts'ani) is `w`
       - /t͡ʃ'/ ჭ (letter ch'ari) is `Shift + w`
 - /dz/ ძ (letter dzili) is `Shift + z`
@@ -36,3 +36,14 @@ Unlike Russian layout Georgian to Latin correspondences are mostly straitforward
 - /ɣ ~ ʁ/ ღ (letter ghani) is `Shift + r`
 - /x ~ χ/ ხ (letter khani) is `Shift + x`
 - /q'/ ყ (letter q'ari) is `y`
+
+## Russian layout
+
+In case you will need to cite something from [@desheriev53].
+
+```{r}
+#| fig-cap: "Russian layout (Mac version)"
+#| echo: false
+
+knitr::include_graphics("images/russian-qwerty-layout.png")
+```
