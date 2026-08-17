@@ -219,7 +219,121 @@ It is useful to mention, that there is another way of representing the FSM. This
 | 12            | 13          | რ     |
 | 13            | 2           | დ     |
 
-### Finite-state transducers {#sec-transducers}
+## Finite-state transducers {#sec-transducers}
+
+So far, we have only used Finite State Machines to accept or reject input words. Now that we are adding both input and output units at each state---making it a Finite State Transducer---we need to change how we write things: list inputs before the colon, followed by outputs after it.
+
+```{r}
+#| eval: false
+
+grViz('
+  digraph G { rankdir="LR"
+  node [fontname="Brill",shape=circle,fontsize=14,fixedsize=true]
+  edge [fontname="Brill",fontsize=16]
+  5 [label="5",shape=doublecircle];
+  0 -> 1 [label="ც:ც"];
+  1 -> 2 [label="ხ:ხ"];
+  2 -> 3 [label="ე:ე"];
+  3 -> 4 [label="ნ:ნ"];
+  4 -> 5 [label="ი:ი"];
+  0 -> 6 [label="ზ:ზ"];
+  6 -> 7 [label="ვ:ვ"];
+  7 -> 8 [label="ი:ი"];
+  8 -> 2 [label="გ:გ"];
+  0 -> 9 [label="შ:შ"];
+  9 -> 10 [label="ე:ე"];
+  10 -> 11 [label="ვ:ვ"];
+  11 -> 12 [label="ა:ა"];
+  12 -> 13 [label="რ:რ"];
+  13 -> 2 [label="დ:დ"];
+}') 
+```
+
+```{r}
+#| out-width: 100%
+#| fig-cap: FST for Georgian ცხენი [tskheni] 'horse', ზვიგენი [zvigeni] 'shark', შევარდენი [shevardeni] 'falcon'
+
+knitr::include_graphics("images/01_09_first_transducer.png")
+```
+
+```{r}
+#| eval: false
+
+grViz('
+  digraph G { rankdir="LR"
+  node [fontname="Brill",shape=circle,fontsize=14,fixedsize=true]
+  edge [fontname="Brill",fontsize=16]
+  5 [label="7",shape=doublecircle];
+  9 [label="9",shape=doublecircle];
+  0 -> 1 [label="ც:ც"];
+  1 -> 2 [label="ხ:ხ"];
+  2 -> 3 [label="ე:ე"];
+  3 -> 4 [label="ნ:ნ"];
+  4 -> 5 [label="ი:ი<N><nom><sg>"];  
+  4 -> 8 [label="მ:ი"];  
+  8 -> 9 [label="ა:<N><erg><sg>"];
+  0 -> 10 [label="ზ:ზ"];
+  10 -> 11 [label="ვ:ვ"];
+  11 -> 12 [label="ი:ი"];
+  12 -> 13 [label="გ:გ"];
+  0 -> 14 [label="შ:შ"];
+  14 -> 15 [label="ე:ე"];
+  15 -> 16 [label="ვ:ვ"];
+  16 -> 17 [label="ა:ა"];
+  17 -> 18 [label="რ:რ"];
+  18 -> 2 [label="დ:დ"];
+}') 
+```
+
+Let's add some morphology:
+
+```{r}
+#| out-width: 100%
+#| fig-cap: FST for Georgian ცხენი [tskheni] 'horse', ზვიგენი [zvigeni] 'shark', შევარდენი [shevardeni] 'falcon' in nominative and ergative forms
+
+knitr::include_graphics("images/01_10_morphology.png")
+```
+
+This is what this FST does:
+
+| input      | output                      |
+|------------|-----------------------------|
+| ცხენი      | ცხენი\<N\>\<nom\>\<sg\>     |
+| ზვიგენი    | ზვიგენი\<N\>\<nom\>\<sg\>   |
+| შევარდენი  | შევარდენი\<N\>\<nom\>\<sg\> |
+| ცხენმა     | ცხენი\<N\>\<erg\>\<sg\>     |
+| ზვიგენმა   | ზვიგენი\<N\>\<erg\>\<sg\>   |
+| შევარდენმა | შევარდენი\<N\>\<erg\>\<sg\> |
 
 
+Лингвистические трансдьюсеры можно использовать для
+
+- морфологического анализа
+- транслитерации/транскрипции
+- предиктивного ввода
+- в системах проверки правописания
+- в системах автоматического перевода близкородственных языков
+- в системах распознавания речи
+- и др.
+
+
+## Problems while modeling morphology with FST
+
+- Проблема описаний:
+    - неполнота: то, что исследователи посчитали достаточным для грамматического описания, может быть недостаточно для моделирования; для некоторого языка может быть доступно грамматическое описание, но отсутствовать словарь и наоборот; словарь может не содержать информации про словоизменительный класс каких-то единиц, которые различаются в грамматическом описании.
+    - противоречивые источники: грамматические описания могут противоречить друг другу; грамматические описания могут противоречить словарям
+- Проблема вариативности:
+    - идиолектная
+    - диалектная
+    - связанная с какими-нибудь социолингвистическими параметрами (в первую очередь такие как пол и возраст, но можно придумать и другие)
+- Проблема неоднозначности (особенно перекошенной частотно):
+    - лексической
+    - морфологическая
+    - синтаксическая
+    - ...
+- Проблема идиом и суплетивизма.
+- Проблема циклов, возникающих при словообразовании.
+- Проблема морфологической сложности: для языков с бедной морфологией проще строить прсотой правиловый морфологический парсер, а не трансдьюсер
+- Технические сложности: весь софт для создания морфологических трансдьюсеров пишут под Linux, за исключением может быть пакета [`hfst-dev`](https://pypi.org/project/hfst-dev/) для Python
+- Не так просто работать совместно над одним проектом, чаще всего лучше иметь двух людей --- специалиста по языку, и специалиста по трансдьюсерам. 
 

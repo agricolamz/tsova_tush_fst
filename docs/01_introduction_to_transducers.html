@@ -170,10 +170,8 @@ div.csl-indent {
    
   <ul>
   <li><a href="#what-is-morphological-analysis" id="toc-what-is-morphological-analysis" class="nav-link active" data-scroll-target="#what-is-morphological-analysis"><span class="header-section-number">1.1</span> What is morphological analysis?</a></li>
-  <li><a href="#finite-state-machine" id="toc-finite-state-machine" class="nav-link" data-scroll-target="#finite-state-machine"><span class="header-section-number">1.2</span> Finite-state machine</a>
-  <ul class="collapse">
-  <li><a href="#sec-transducers" id="toc-sec-transducers" class="nav-link" data-scroll-target="#sec-transducers"><span class="header-section-number">1.2.1</span> Finite-state transducers</a></li>
-  </ul></li>
+  <li><a href="#finite-state-machine" id="toc-finite-state-machine" class="nav-link" data-scroll-target="#finite-state-machine"><span class="header-section-number">1.2</span> Finite-state machine</a></li>
+  <li><a href="#sec-transducers" id="toc-sec-transducers" class="nav-link" data-scroll-target="#sec-transducers"><span class="header-section-number">1.3</span> Finite-state transducers</a></li>
   </ul>
 </nav>
     </div>
@@ -370,8 +368,66 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<section id="sec-transducers" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-transducers"><span class="header-section-number">1.2.1</span> Finite-state transducers</h3>
+</section>
+<section id="sec-transducers" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-transducers"><span class="header-section-number">1.3</span> Finite-state transducers</h2>
+<p>So far, we have only used Finite State Machines to accept or reject input words. Now that we are adding both input and output units at each state—making it a Finite State Transducer—we need to change how we write things: list inputs before the colon, followed by outputs after it.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01_09_first_transducer.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>FST for Georgian ცხენი [tskheni] ‘horse’, ზვიგენი [zvigeni] ‘shark’, შევარდენი [shevardeni] ‘falcon’</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Let’s add some morphology:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01_10_morphology.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>FST for Georgian ცხენი [tskheni] ‘horse’, ზვიგენი [zvigeni] ‘shark’, შევარდენი [shevardeni] ‘falcon’ in nominative and ergative forms</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>This is what this FST does:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>input</th>
+<th>output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ცხენი</td>
+<td>ცხენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;</td>
+</tr>
+<tr class="even">
+<td>ზვიგენი</td>
+<td>ზვიგენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;</td>
+</tr>
+<tr class="odd">
+<td>შევარდენი</td>
+<td>შევარდენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;</td>
+</tr>
+<tr class="even">
+<td>ცხენმა</td>
+<td>ცხენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;</td>
+</tr>
+<tr class="odd">
+<td>ზვიგენმა</td>
+<td>ზვიგენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;</td>
+</tr>
+<tr class="even">
+<td>შევარდენმა</td>
+<td>შევარდენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;</td>
+</tr>
+</tbody>
+</table>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -379,7 +435,6 @@ div.csl-indent {
 Arkhangelskiy, T. A. 2012. <span>“Принципы Построения Морфологического Парсера Для Разноструктурных Языков [<span>P</span>rinciples of Development of a Morphological Analyzer for Languages with Different Structures].”</span> PhD thesis, Lomonosov Moscow State University.
 </div>
 </div>
-</section>
 </section>
 
 </main> <!-- /main -->
