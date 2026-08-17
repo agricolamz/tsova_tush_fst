@@ -58,5 +58,45 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
     ]
+  },
+  {
+    "objectID": "01_introduction_to_transducers.html",
+    "href": "01_introduction_to_transducers.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "1.1 What is FST?\nFinite-state transducer can be used in order to create rule based morphological parsers. A parser built with these tools can handle both analyzing and generating forms within the same set of rules. It’s important to remember that there is no one single “correct” way to analyze morphology; it depends on what you need. Because of this, creating an FST analyzer is like create a digital representation of a grammatical description and a dictionary into a computer-readable format.\nWhat are the alternatives:",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01_introduction_to_transducers.html#what-is-fst",
+    "href": "01_introduction_to_transducers.html#what-is-fst",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "parser from SIL Fieldworks;\nnon FST rule-based approach by T. Arkhangelskiy (Arkhangelskiy 2012);\nmorphological parsers that are specific for some languages (e. g. mystem for Russian);\nNeural Networks, but adjusting those systems is much more complicated than tweaking rule-based models.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01_introduction_to_transducers.html#what-is-morphological-analysis",
+    "href": "01_introduction_to_transducers.html#what-is-morphological-analysis",
+    "title": "1  Introduction",
+    "section": "1.2 What is morphological analysis?",
+    "text": "1.2 What is morphological analysis?\nMorphological analysis involves defining a word’s grammatical form, identifying its base root, and translating the stem meaning. For example, Georgian მინდვრის [mindvris] is linked to the gen.sg form of the stem მინდორი [mindori], which means ‘meadow’. Depending on their goals, linguists emphasize different parts; theoretical researchers typically focus more on translatings stems and don’t provide the stem itself.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "01_introduction_to_transducers.html#finite-state-machine",
+    "href": "01_introduction_to_transducers.html#finite-state-machine",
+    "title": "1  Introduction",
+    "section": "1.3 Finite-state machine",
+    "text": "1.3 Finite-state machine\nFinite-state machine (or automaton) is a mathematical model. FSM can be in exactly one of a finite number of states at any given time. The FSM can change from one state to another in response to some inputs; the change from one state to another is called a transition.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe most important that FSM consists of:\n\nalphabet that can trigger some transition;\nfinite number of states;\ntransitions between states;\none initial state (often denoted as 0);\nset of the final states (often denoted with the double circle).\n\n\n\n\n\nArkhangelskiy, T. A. 2012. “Принципы Построения Морфологического Парсера Для Разноструктурных Языков [Principles of Development of a Morphological Analyzer for Languages with Different Structures].” PhD thesis, Lomonosov Moscow State University.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
   }
 ]

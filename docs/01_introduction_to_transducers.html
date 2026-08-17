@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; What is FST? – Tsova Tush morphological analyzer with FST</title>
+<title>1&nbsp; Introduction – Tsova Tush morphological analyzer with FST</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -72,6 +91,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -86,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_introduction_to_transducers.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_introduction_to_transducers.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -123,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_introduction_to_transducers.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -143,20 +164,28 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-is-fst" id="toc-what-is-fst" class="nav-link active" data-scroll-target="#what-is-fst"><span class="header-section-number">1.1</span> What is FST?</a></li>
+  <li><a href="#what-is-morphological-analysis" id="toc-what-is-morphological-analysis" class="nav-link" data-scroll-target="#what-is-morphological-analysis"><span class="header-section-number">1.2</span> What is morphological analysis?</a></li>
+  <li><a href="#finite-state-machine" id="toc-finite-state-machine" class="nav-link" data-scroll-target="#finite-state-machine"><span class="header-section-number">1.3</span> Finite-state machine</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -168,8 +197,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="what-is-fst" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="what-is-fst"><span class="header-section-number">1.1</span> What is FST?</h2>
+<p>Finite-state transducer can be used in order to create rule based morphological parsers. A parser built with these tools can handle both analyzing and generating forms within the same set of rules. It’s important to remember that there is no one single “correct” way to analyze morphology; it depends on what you need. Because of this, creating an FST analyzer is like create a digital representation of a grammatical description and a dictionary into a computer-readable format.</p>
+<p>What are the alternatives:</p>
+<ul>
+<li>parser from SIL Fieldworks;</li>
+<li>non FST rule-based approach by T. Arkhangelskiy <span class="citation" data-cites="arkhangelskiy12">(<a href="references.html#ref-arkhangelskiy12" role="doc-biblioref">Arkhangelskiy 2012</a>)</span>;</li>
+<li>morphological parsers that are specific for some languages (e. g. <code>mystem</code> for Russian);</li>
+<li>Neural Networks, but adjusting those systems is much more complicated than tweaking rule-based models.</li>
+</ul>
+</section>
+<section id="what-is-morphological-analysis" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="what-is-morphological-analysis"><span class="header-section-number">1.2</span> What is morphological analysis?</h2>
+<p>Morphological analysis involves defining a word’s grammatical form, identifying its base root, and translating the stem meaning. For example, Georgian <em>მინდვრის</em> [mindvris] is linked to the <span class="smallcaps">gen.sg</span> form of the stem <em>მინდორი</em> [mindori], which means ‘meadow’. Depending on their goals, linguists emphasize different parts; theoretical researchers typically focus more on translatings stems and don’t provide the stem itself.</p>
+</section>
+<section id="finite-state-machine" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="finite-state-machine"><span class="header-section-number">1.3</span> Finite-state machine</h2>
+<p>Finite-state machine (or automaton) is a mathematical model. FSM can be in exactly one of a finite number of states at any given time. The FSM can change from one state to another in response to some inputs; the change from one state to another is called a transition.</p>
+<div class="cell quarto-layout-panel" data-layout="[[1,4],[1,4]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img src="images/01_01_light_switch.jpg" class="img-fluid" width="400"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
+<p><img src="images/01_02_light_switch_automaton.png" class="img-fluid" width="1843"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<p><img src="images/01_03_turnstile.jpg" class="img-fluid" width="306"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
+<p><img src="images/01_04_turnstile_automaton.png" class="img-fluid" width="1828"></p>
+</div>
+</div>
+</div>
+<p>The most important that FSM consists of:</p>
+<ul>
+<li>alphabet that can trigger some transition;</li>
+<li>finite number of states;</li>
+<li>transitions between states;</li>
+<li>one initial state (often denoted as <code>0</code>);</li>
+<li>set of the final states (often denoted with the double circle).</li>
+</ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-arkhangelskiy12" class="csl-entry" role="listitem">
+Arkhangelskiy, T. A. 2012. <span>“Принципы Построения Морфологического Парсера Для Разноструктурных Языков [<span>P</span>rinciples of Development of a Morphological Analyzer for Languages with Different Structures].”</span> PhD thesis, Lomonosov Moscow State University.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -572,7 +651,7 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link" aria-label="Introduction">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>

@@ -4,4 +4,71 @@ editor_options:
   chunk_output_type: console
 ---
 
-# What is FST?
+# Introduction
+
+## What is FST?
+
+Finite-state transducer can be used in order to create rule based morphological parsers.  A parser built with these tools can handle both analyzing and generating forms within the same set of rules. It's important to remember that there is no one single "correct" way to analyze morphology; it depends on what you need. Because of this, creating an FST analyzer is like create a digital representation of a grammatical description and a dictionary into a computer-readable format.
+
+What are the alternatives:
+
+- parser from SIL Fieldworks;
+- non FST rule-based approach by T. Arkhangelskiy [@arkhangelskiy12];
+- morphological parsers that are specific for some languages (e. g. `mystem` for Russian);
+- Neural Networks, but adjusting those systems is much more complicated than tweaking rule-based models.
+
+## What is morphological analysis?
+
+Morphological analysis involves defining a word’s grammatical form, identifying its base root, and translating the stem meaning. For example, Georgian *მინდვრის* [mindvris] is linked to the [gen.sg]{.smallcaps} form of the stem *მინდორი* [mindori], which means 'meadow'. Depending on their goals, linguists emphasize different parts; theoretical researchers typically focus more on translatings stems and don't provide the stem itself.
+
+## Finite-state machine
+
+Finite-state machine (or automaton) is a mathematical model. FSM can be in exactly one of a finite number of states at any given time. The FSM can change from one state to another in response to some inputs; the change from one state to another is called a transition.
+
+```{r}
+#| eval: false
+
+library(DiagrammeR)
+grViz('
+  digraph G { rankdir="LR"
+  node [fontname="Brill",shape=circle,fontsize=14,fixedsize=true]
+  edge [fontname="Brill",fontsize=18]
+  0 [label="0"];
+  1 [label="1"];
+  0 -> 1 [label="up"];
+  0 -> 0 [label="down"];
+  1 -> 1 [label="up"];
+  1 -> 0 [label="down"];
+}')
+
+grViz('
+  digraph G { rankdir="LR"
+  node [fontname="Brill",shape=circle,fontsize=14,fixedsize=true]
+  edge [fontname="Brill",fontsize=16]
+  0 [label="closed"];
+  1 [label="open"];
+  0 -> 1 [label="show pass"];
+  0 -> 0 [label="push"];
+  1 -> 1 [label="show pass"];
+  1 -> 0 [label="push"];
+}') 
+```
+
+```{r}
+#| layout: "[[1,4],[1,4]]"
+
+knitr::include_graphics("images/01_01_light_switch.jpg")
+knitr::include_graphics("images/01_02_light_switch_automaton.png")
+knitr::include_graphics("images/01_03_turnstile.jpg")
+knitr::include_graphics("images/01_04_turnstile_automaton.png")
+```
+
+The most important that FSM consists of:
+
+- alphabet that can trigger some transition;
+- finite number of states;
+- transitions between states;
+- one initial state (often denoted as `0`);
+- set of the final states (often denoted with the double circle).
+
+
