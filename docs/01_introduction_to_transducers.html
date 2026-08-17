@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – Tsova Tush morphological analyzer with FST</title>
+<title>1&nbsp; What is FST? – Tsova Tush morphological analyzer with FST</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -107,7 +107,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_introduction_to_transducers.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_introduction_to_transducers.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,7 +144,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_introduction_to_transducers.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -169,9 +169,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-fst" id="toc-what-is-fst" class="nav-link active" data-scroll-target="#what-is-fst"><span class="header-section-number">1.1</span> What is FST?</a></li>
-  <li><a href="#what-is-morphological-analysis" id="toc-what-is-morphological-analysis" class="nav-link" data-scroll-target="#what-is-morphological-analysis"><span class="header-section-number">1.2</span> What is morphological analysis?</a></li>
-  <li><a href="#finite-state-machine" id="toc-finite-state-machine" class="nav-link" data-scroll-target="#finite-state-machine"><span class="header-section-number">1.3</span> Finite-state machine</a></li>
+  <li><a href="#what-is-morphological-analysis" id="toc-what-is-morphological-analysis" class="nav-link active" data-scroll-target="#what-is-morphological-analysis"><span class="header-section-number">1.1</span> What is morphological analysis?</a></li>
+  <li><a href="#finite-state-machine" id="toc-finite-state-machine" class="nav-link" data-scroll-target="#finite-state-machine"><span class="header-section-number">1.2</span> Finite-state machine</a>
+  <ul class="collapse">
+  <li><a href="#sec-transducers" id="toc-sec-transducers" class="nav-link" data-scroll-target="#sec-transducers"><span class="header-section-number">1.2.1</span> Finite-state transducers</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -180,7 +182,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></h1>
 </div>
 
 
@@ -197,8 +199,6 @@ div.csl-indent {
 </header>
 
 
-<section id="what-is-fst" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="what-is-fst"><span class="header-section-number">1.1</span> What is FST?</h2>
 <p>Finite-state transducer can be used in order to create rule based morphological parsers. A parser built with these tools can handle both analyzing and generating forms within the same set of rules. It’s important to remember that there is no one single “correct” way to analyze morphology; it depends on what you need. Because of this, creating an FST analyzer is like create a digital representation of a grammatical description and a dictionary into a computer-readable format.</p>
 <p>What are the alternatives:</p>
 <ul>
@@ -207,28 +207,27 @@ div.csl-indent {
 <li>morphological parsers that are specific for some languages (e. g. <code>mystem</code> for Russian);</li>
 <li>Neural Networks, but adjusting those systems is much more complicated than tweaking rule-based models.</li>
 </ul>
+<section id="what-is-morphological-analysis" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="what-is-morphological-analysis"><span class="header-section-number">1.1</span> What is morphological analysis?</h2>
+<p>Morphological analysis involves defining a word’s grammatical form, identifying its base root, and translating the stem meaning. For example, Georgian მინდვრის [mindvris] is linked to the <span class="smallcaps">gen.sg</span> form of the stem მინდორი [mindori], which means ‘meadow’. Depending on their goals, linguists emphasize different parts; theoretical researchers typically focus more on translatings stems and don’t provide the stem itself.</p>
 </section>
-<section id="what-is-morphological-analysis" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="what-is-morphological-analysis"><span class="header-section-number">1.2</span> What is morphological analysis?</h2>
-<p>Morphological analysis involves defining a word’s grammatical form, identifying its base root, and translating the stem meaning. For example, Georgian <em>მინდვრის</em> [mindvris] is linked to the <span class="smallcaps">gen.sg</span> form of the stem <em>მინდორი</em> [mindori], which means ‘meadow’. Depending on their goals, linguists emphasize different parts; theoretical researchers typically focus more on translatings stems and don’t provide the stem itself.</p>
-</section>
-<section id="finite-state-machine" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="finite-state-machine"><span class="header-section-number">1.3</span> Finite-state machine</h2>
+<section id="finite-state-machine" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="finite-state-machine"><span class="header-section-number">1.2</span> Finite-state machine</h2>
 <p>Finite-state machine (or automaton) is a mathematical model. FSM can be in exactly one of a finite number of states at any given time. The FSM can change from one state to another in response to some inputs; the change from one state to another is called a transition.</p>
-<div class="cell quarto-layout-panel" data-layout="[[1,4],[1,4]]">
+<div class="cell quarto-layout-panel" data-layout="[[1,2],[1,2]]">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img src="images/01_01_light_switch.jpg" class="img-fluid" width="400"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 66.7%;justify-content: center;">
 <p><img src="images/01_02_light_switch_automaton.png" class="img-fluid" width="1843"></p>
 </div>
 </div>
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 20.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img src="images/01_03_turnstile.jpg" class="img-fluid" width="306"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 80.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 66.7%;justify-content: center;">
 <p><img src="images/01_04_turnstile_automaton.png" class="img-fluid" width="1828"></p>
 </div>
 </div>
@@ -241,6 +240,138 @@ div.csl-indent {
 <li>one initial state (often denoted as <code>0</code>);</li>
 <li>set of the final states (often denoted with the double circle).</li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01_05_horse.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>FSM for Georgian ცხენი [tskheni] ‘horse’</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>If the program handled the full path to the final state (double circle), then we have success, otherwise it failed. Usually failure path are not displayed.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01_06_horse_short.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>FSM for Georgian ცხენი [tskheni] ‘horse’</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>It is possible to store multiple words:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01_07_multiple_words.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>FSM for Georgian ცხენი [tskheni] ‘horse’, ზვიგენი [zvigeni] ‘shark’, შევარდენი [shevardeni] ‘falcon’</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>As you can see there is a room for the optimisation:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/01_08_multiple_words_optimized.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>FSM for Georgian ცხენი [tskheni] ‘horse’, ზვიგენი [zvigeni] ‘shark’, შევარდენი [shevardeni] ‘falcon’</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>It is useful to mention, that there is another way of representing the FSM. This called ATT format:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>initial state</th>
+<th>final state</th>
+<th>input</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+<td>ც</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>ხ</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>3</td>
+<td>ე</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+<td>ნ</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>5</td>
+<td>ი</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>6</td>
+<td>ზ</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>7</td>
+<td>ვ</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>8</td>
+<td>ი</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>2</td>
+<td>გ</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>9</td>
+<td>შ</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>10</td>
+<td>ე</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>11</td>
+<td>ვ</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>12</td>
+<td>ა</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>13</td>
+<td>რ</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>2</td>
+<td>დ</td>
+</tr>
+</tbody>
+</table>
+<section id="sec-transducers" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-transducers"><span class="header-section-number">1.2.1</span> Finite-state transducers</h3>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -248,6 +379,7 @@ div.csl-indent {
 Arkhangelskiy, T. A. 2012. <span>“Принципы Построения Морфологического Парсера Для Разноструктурных Языков [<span>P</span>rinciples of Development of a Morphological Analyzer for Languages with Different Structures].”</span> PhD thesis, Lomonosov Moscow State University.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
