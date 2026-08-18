@@ -2,6 +2,12 @@
 
 This is a website dedicated to the creation of morphological transducer for Tsova Tush during the [CauLaGe Zemo Alvani Field Research](https://zafier.gitpages.huma-num.fr/homepage/index.html) (ZAFieR) Station from August 18 to 27, 2026. Materials are based on [@wichersschreur2025] and [@kadagidze84].
 
+<div style="border: 2px solid; overflow: hidden; margin: 15px auto; max-width: 1575px;">
+<iframe scrolling="no" src="https://zafier.gitpages.huma-num.fr/homepage/2026.html" style="border: 0px none; margin-left: -36px; height: 2600px; margin-top: -2100px; width: 650px;">
+</iframe>
+</div>
+
+
 ## List of programs {.unnumbered}
 
 ```{{shell}}
