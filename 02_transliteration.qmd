@@ -106,22 +106,22 @@ I decided to use transliteration system from [@wichersschreur2025]:
 So I wrote two simple scripts that can be used for transliteration.
 
 - Open a new Google Colab
-- Type there and run the code chunk (it is about 25 s.)
+- Type there and run the code chunk (it is about 20--25 s.)
 
-```
-!curl -s https://raw.githubusercontent.com/agricolamz/tsova_tush_fst_tools/refs/heads/main/Makefile -o Makefile; make
+```{{shell}}
+!git clone https://github.com/agricolamz/tsova_tush_fst_tools.git; mv tsova_tush_fst_tools/* .; rm -d tsova_tush_fst_tools; make
 ```
 
 -  After that you can transliterate back and forth, using the following command (*at't'iv* means 'fate, luck', *pħe* means 'village')):
 
-```
-!echo "ატტივ" | awk -f tsova_tush_fst_tools/mkh2la.awk
+```{{shell}}
+!make transcribe_mkherduli INPUT="ატტივ" 
 
 at't'iv
 ```
 
-```
-!echo "pħe" | awk -f tsova_tush_fst_tools/la2mkh.awk
+```{{shell}}
+!make transcribe_latin INPUT="pħe"
 
 ფჰ'ე
 ```

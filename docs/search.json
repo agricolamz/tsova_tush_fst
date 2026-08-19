@@ -70,36 +70,6 @@
     ]
   },
   {
-    "objectID": "02_transliteration.html#georgian-layout",
-    "href": "02_transliteration.html#georgian-layout",
-    "title": "2  Transliteration",
-    "section": "",
-    "text": "ejective letters are mostly default, but\n\n/pʰ/ ფ (letter pani) is f\n/tʰ/ თ (letter tani) is Shift + t\n/kʰ/ ქ (letter kani) is q\n/t͡sʰ/ ც (letter tsani) is c\n/t͡ʃʰ/ ჩ (letter chini) is Shift + c\nwith exceptions of\n\n/t͡s’/ ც (letter ts’ani) is w\n/t͡ʃ’/ ჭ (letter ch’ari) is Shift + w\n\n\n/dz/ ძ (letter dzili) is Shift + z\n/ʒ/ ჟ (letter zhani) is Shift + j\n/ʃ/ შ (letter shini) is Shift + s\n/ɣ ~ ʁ/ ღ (letter ghani) is Shift + r\n/x ~ χ/ ხ (letter khani) is Shift + x\n/q’/ ყ (letter q’ari) is y",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
-    ]
-  },
-  {
-    "objectID": "02_transliteration.html#russian-layout",
-    "href": "02_transliteration.html#russian-layout",
-    "title": "2  Transliteration",
-    "section": "2.2 Russian layout",
-    "text": "2.2 Russian layout\nIn case you will need to cite something from (Desheriev 1953).\n\n\n\n\n\nRussian layout (Mac version)\n\n\n\n\n\n\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika, Morfologija, Sintaksis, Leksika [The Batsbi Language: Phonetics, Morphology, Syntax, Lexicon]. Akademija Nauk SSSR, Institut Jazykoznanija.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Arkhangelskiy, T. A. 2012. “Принципы Построения Морфологического\nПарсера Для Разноструктурных Языков [Principles of\nDevelopment of a Morphological Analyzer for Languages with Different\nStructures].” PhD thesis, Lomonosov Moscow State University.\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika,\nMorfologija, Sintaksis, Leksika [The Batsbi\nLanguage: Phonetics, Morphology, Syntax, Lexicon].\nAkademija Nauk SSSR, Institut Jazykoznanija.\n\n\nKadagidze, Davit, and Niko Kadagidze. 1984. C’ova-Tušur-Kartul-Rusul\nLeksik’oni\n[Tsova-Tush-Georgian-Russian\nDictionary]. Mecniereba.\n\n\nWichers Schreur, Jesse. 2025. Intensive Language\nContact in the Caucasus: The Case of\nTsova-Tush. Languages of the Caucasus 5.\nLanguage Science Press. https://doi.org/10.5281/zenodo.15275286.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
     "objectID": "02_transliteration.html#layouts",
     "href": "02_transliteration.html#layouts",
     "title": "2  Transliteration",
@@ -114,9 +84,19 @@
     "href": "02_transliteration.html#transliteration",
     "title": "2  Transliteration",
     "section": "2.2 Transliteration",
-    "text": "2.2 Transliteration\nI decided to use transliteration system from (Wichers Schreur 2025):\n\n\n\nla\nmkh\n\n\n\n\na\nა\n\n\nb\nბ\n\n\nc\nც\n\n\nc’\nწ\n\n\nč\nჩ\n\n\nč’\nჭ\n\n\nd\nდ\n\n\ne\nე\n\n\ng\nგ\n\n\nğ\nღ\n\n\nh\nჰ\n\n\nħ\nჰ’\n\n\ni\nი\n\n\nj\nჲ\n\n\nk\nქ\n\n\nk’\nკ\n\n\nl\nლ\n\n\nɬ\nლ’\n\n\nm\nმ\n\n\nn\nნ\n\n\no\nო\n\n\nŏ\nო̆\n\n\np\nფ\n\n\np’\nპ\n\n\nq\nჴ\n\n\nqq\nჴჴ\n\n\nq’\nყ\n\n\nr\nრ\n\n\ns\nს\n\n\nš\nშ\n\n\nt\nთ\n\n\nt’\nტ\n\n\nt’\nტ\n\n\nu\nუ\n\n\nŭ\nუ̆\n\n\nv\nვ\n\n\nw\nჳ\n\n\nx\nხ\n\n\nz\nზ\n\n\nž\nჟ\n\n\nʒ\nძ\n\n\nǯ\nჯ\n\n\nʕ\nჵ\n\n\nɁ\nჸ\n\n\nⁿ\nჼ\n\n\n\nSo I wrote two simple scripts that can be used for transliteration.\n\nOpen a new Google Colab\nType there and run the code chunk (it is about 25 s.)\n\n!curl -s https://raw.githubusercontent.com/agricolamz/tsova_tush_fst_tools/refs/heads/main/Makefile -o Makefile; make\n\nAfter that you can transliterate back and forth, using the following command (at’t’iv means ‘fate, luck’, pħe means ‘village’)):\n\n!echo \"ატტივ\" | awk -f tsova_tush_fst_tools/mkh2la.awk\n\nat't'iv\n!echo \"pħe\" | awk -f tsova_tush_fst_tools/la2mkh.awk\n\nფჰ'ე\n\n\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika, Morfologija, Sintaksis, Leksika [The Batsbi Language: Phonetics, Morphology, Syntax, Lexicon]. Akademija Nauk SSSR, Institut Jazykoznanija.\n\n\nWichers Schreur, Jesse. 2025. Intensive Language Contact in the Caucasus: The Case of Tsova-Tush. Languages of the Caucasus 5. Language Science Press. https://doi.org/10.5281/zenodo.15275286.",
+    "text": "2.2 Transliteration\nI decided to use transliteration system from (Wichers Schreur 2025):\n\n\n\nla\nmkh\n\n\n\n\na\nა\n\n\nb\nბ\n\n\nc\nც\n\n\nc’\nწ\n\n\nč\nჩ\n\n\nč’\nჭ\n\n\nd\nდ\n\n\ne\nე\n\n\ng\nგ\n\n\nğ\nღ\n\n\nh\nჰ\n\n\nħ\nჰ’\n\n\ni\nი\n\n\nj\nჲ\n\n\nk\nქ\n\n\nk’\nკ\n\n\nl\nლ\n\n\nɬ\nლ’\n\n\nm\nმ\n\n\nn\nნ\n\n\no\nო\n\n\nŏ\nო̆\n\n\np\nფ\n\n\np’\nპ\n\n\nq\nჴ\n\n\nqq\nჴჴ\n\n\nq’\nყ\n\n\nr\nრ\n\n\ns\nს\n\n\nš\nშ\n\n\nt\nთ\n\n\nt’\nტ\n\n\nt’\nტ\n\n\nu\nუ\n\n\nŭ\nუ̆\n\n\nv\nვ\n\n\nw\nჳ\n\n\nx\nხ\n\n\nz\nზ\n\n\nž\nჟ\n\n\nʒ\nძ\n\n\nǯ\nჯ\n\n\nʕ\nჵ\n\n\nɁ\nჸ\n\n\nⁿ\nჼ\n\n\n\nSo I wrote two simple scripts that can be used for transliteration.\n\nOpen a new Google Colab\nType there and run the code chunk (it is about 20–25 s.)\n\n```{shell}\n!git clone https://github.com/agricolamz/tsova_tush_fst_tools.git; mv tsova_tush_fst_tools/* .; rm -d tsova_tush_fst_tools; make\n```\n\nAfter that you can transliterate back and forth, using the following command (at’t’iv means ‘fate, luck’, pħe means ‘village’)):\n\n```{shell}\n!make transcribe_mkherduli INPUT=\"ატტივ\" \n\nat't'iv\n```\n```{shell}\n!make transcribe_latin INPUT=\"pħe\"\n\nფჰ'ე\n```\n\n\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika, Morfologija, Sintaksis, Leksika [The Batsbi Language: Phonetics, Morphology, Syntax, Lexicon]. Akademija Nauk SSSR, Institut Jazykoznanija.\n\n\nWichers Schreur, Jesse. 2025. Intensive Language Contact in the Caucasus: The Case of Tsova-Tush. Languages of the Caucasus 5. Language Science Press. https://doi.org/10.5281/zenodo.15275286.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Arkhangelskiy, T. A. 2012. “Принципы Построения Морфологического\nПарсера Для Разноструктурных Языков [Principles of\nDevelopment of a Morphological Analyzer for Languages with Different\nStructures].” PhD thesis, Lomonosov Moscow State University.\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika,\nMorfologija, Sintaksis, Leksika [The Batsbi\nLanguage: Phonetics, Morphology, Syntax, Lexicon].\nAkademija Nauk SSSR, Institut Jazykoznanija.\n\n\nKadagidze, Davit, and Niko Kadagidze. 1984. C’ova-Tušur-Kartul-Rusul\nLeksik’oni\n[Tsova-Tush-Georgian-Russian\nDictionary]. Mecniereba.\n\n\nWichers Schreur, Jesse. 2025. Intensive Language\nContact in the Caucasus: The Case of\nTsova-Tush. Languages of the Caucasus 5.\nLanguage Science Press. https://doi.org/10.5281/zenodo.15275286.",
+    "crumbs": [
+      "References"
     ]
   }
 ]
