@@ -9,8 +9,8 @@ book:
   repo-url: https://github.com/agricolamz/tsova_tush_fst/
   chapters:
     - index.qmd
-    - 01_introduction_to_transducers.qmd
-    - 02_transliteration.qmd
+    - 01_transliteration.qmd
+    - 02_introduction_to_transducers.qmd
     - references.qmd
 
 callout-appearance: simple

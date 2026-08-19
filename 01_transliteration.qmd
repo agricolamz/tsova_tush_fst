@@ -64,11 +64,13 @@ I decided to use transliteration system from [@wichersschreur2025]:
 | č' | ჭ   |
 | d  | დ   |
 | e  | ე   |
+| ĕ  | ე̆   |
 | g  | გ   |
 | ğ  | ღ   |
 | h  | ჰ   |
 | ħ  | ჰ'  |
 | i  | ი   |
+| ĭ  | ი̆   |
 | j  | ჲ   |
 | k  | ქ   |
 | k' | კ   |

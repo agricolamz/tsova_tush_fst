@@ -88,7 +88,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_introduction_to_transducers.html" rel="next">
+<link href="./01_transliteration.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -176,14 +176,14 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_introduction_to_transducers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></span></a>
+  <a href="./01_transliteration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Transliteration</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_transliteration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Transliteration</span></span></a>
+  <a href="./02_introduction_to_transducers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is FST?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,7 +249,7 @@ div.csl-indent {
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{shell}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lexd</span> <span class="at">-V</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="ce6a1542" class="cell" data-execution_count="1">
+<div id="1cf72af9" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-stdout">
 <pre><code>lexd 1.3.5</code></pre>
 </div>
@@ -257,7 +257,7 @@ div.csl-indent {
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{shell}</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">hfst-twolc</span> <span class="at">-V</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="159f826a" class="cell" data-execution_count="2">
+<div id="f65eec40" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 hfst-twolc 0 (hfst 3.17.2)
@@ -273,7 +273,7 @@ There is NO WARRANTY, to the extent permitted by law.
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{shell}</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cg3</span> <span class="at">-V</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="6d9adcc0" class="cell" data-execution_count="3">
+<div id="5222b8a2" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>VISL CG-3 Disambiguator version 1.6.8.13898
 Copyright (C) 2007-2025 GrammarSoft ApS. Licensed under GPLv3+</code></pre>
@@ -282,7 +282,7 @@ Copyright (C) 2007-2025 GrammarSoft ApS. Licensed under GPLv3+</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{shell}</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">-v</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="4c4e6c37" class="cell" data-execution_count="4">
+<div id="c3bd2285" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>git version 2.43.0</code></pre>
 </div>
@@ -705,8 +705,8 @@ Wichers Schreur, Jesse. 2025. <em><span>I</span>ntensive Language Contact in the
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_introduction_to_transducers.html" class="pagination-link" aria-label="What is FST?">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./01_transliteration.html" class="pagination-link" aria-label="Transliteration">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Transliteration</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

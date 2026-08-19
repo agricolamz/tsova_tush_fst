@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Transliteration – Tsova Tush morphological analyzer with FST</title>
+<title>1&nbsp; Transliteration – Tsova Tush morphological analyzer with FST</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -87,8 +87,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./01_introduction_to_transducers.html" rel="prev">
+<link href="./02_introduction_to_transducers.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -142,7 +142,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_transliteration.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Transliteration</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_transliteration.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Transliteration</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -178,14 +178,14 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_introduction_to_transducers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></span></a>
+  <a href="./01_transliteration.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Transliteration</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_transliteration.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Transliteration</span></span></a>
+  <a href="./02_introduction_to_transducers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is FST?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -204,12 +204,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#layouts" id="toc-layouts" class="nav-link active" data-scroll-target="#layouts"><span class="header-section-number">2.1</span> Layouts</a>
+  <li><a href="#layouts" id="toc-layouts" class="nav-link active" data-scroll-target="#layouts"><span class="header-section-number">1.1</span> Layouts</a>
   <ul class="collapse">
-  <li><a href="#georgian-layout" id="toc-georgian-layout" class="nav-link" data-scroll-target="#georgian-layout"><span class="header-section-number">2.1.1</span> Georgian layout</a></li>
-  <li><a href="#russian-layout" id="toc-russian-layout" class="nav-link" data-scroll-target="#russian-layout"><span class="header-section-number">2.1.2</span> Russian layout</a></li>
+  <li><a href="#georgian-layout" id="toc-georgian-layout" class="nav-link" data-scroll-target="#georgian-layout"><span class="header-section-number">1.1.1</span> Georgian layout</a></li>
+  <li><a href="#russian-layout" id="toc-russian-layout" class="nav-link" data-scroll-target="#russian-layout"><span class="header-section-number">1.1.2</span> Russian layout</a></li>
   </ul></li>
-  <li><a href="#transliteration" id="toc-transliteration" class="nav-link" data-scroll-target="#transliteration"><span class="header-section-number">2.2</span> Transliteration</a></li>
+  <li><a href="#transliteration" id="toc-transliteration" class="nav-link" data-scroll-target="#transliteration"><span class="header-section-number">1.2</span> Transliteration</a></li>
   </ul>
 </nav>
     </div>
@@ -218,7 +218,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Transliteration</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Transliteration</span></h1>
 </div>
 
 
@@ -236,10 +236,10 @@ div.csl-indent {
 
 
 <p>It is hard to work since we have multiple orthographies to work with: Georgian, Latin, IPA, Cyrillic.</p>
-<section id="layouts" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="layouts"><span class="header-section-number">2.1</span> Layouts</h2>
-<section id="georgian-layout" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="georgian-layout"><span class="header-section-number">2.1.1</span> Georgian layout</h3>
+<section id="layouts" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="layouts"><span class="header-section-number">1.1</span> Layouts</h2>
+<section id="georgian-layout" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="georgian-layout"><span class="header-section-number">1.1.1</span> Georgian layout</h3>
 <p>I find it useful to install Georgian layout on your PC.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -274,8 +274,8 @@ div.csl-indent {
 <li>/q’/ ყ (letter q’ari) is <code>y</code></li>
 </ul>
 </section>
-<section id="russian-layout" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="russian-layout"><span class="header-section-number">2.1.2</span> Russian layout</h3>
+<section id="russian-layout" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="russian-layout"><span class="header-section-number">1.1.2</span> Russian layout</h3>
 <p>In case you will need to cite something from <span class="citation" data-cites="desheriev53">(<a href="references.html#ref-desheriev53" role="doc-biblioref">Desheriev 1953</a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -289,8 +289,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="transliteration" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="transliteration"><span class="header-section-number">2.2</span> Transliteration</h2>
+<section id="transliteration" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="transliteration"><span class="header-section-number">1.2</span> Transliteration</h2>
 <p>I decided to use transliteration system from <span class="citation" data-cites="wichersschreur2025">(<a href="references.html#ref-wichersschreur2025" role="doc-biblioref">Wichers Schreur 2025</a>)</span>:</p>
 <table class="caption-top table">
 <thead>
@@ -333,24 +333,32 @@ div.csl-indent {
 <td>ე</td>
 </tr>
 <tr class="odd">
+<td>ĕ</td>
+<td>ე̆</td>
+</tr>
+<tr class="even">
 <td>g</td>
 <td>გ</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>ğ</td>
 <td>ღ</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>h</td>
 <td>ჰ</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>ħ</td>
 <td>ჰ’</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>i</td>
 <td>ი</td>
+</tr>
+<tr class="odd">
+<td>ĭ</td>
+<td>ი̆</td>
 </tr>
 <tr class="even">
 <td>j</td>
@@ -918,13 +926,13 @@ Wichers Schreur, Jesse. 2025. <em><span>I</span>ntensive Language Contact in the
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./01_introduction_to_transducers.html" class="pagination-link" aria-label="What is FST?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is FST?</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02_introduction_to_transducers.html" class="pagination-link" aria-label="What is FST?">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">What is FST?</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
