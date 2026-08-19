@@ -275,7 +275,7 @@ grViz('
   0 -> 10 [label="ზ:ზ"];
   10 -> 11 [label="ვ:ვ"];
   11 -> 12 [label="ი:ი"];
-  12 -> 13 [label="გ:გ"];
+  12 -> 2 [label="გ:გ"];
   0 -> 14 [label="შ:შ"];
   14 -> 15 [label="ე:ე"];
   15 -> 16 [label="ვ:ვ"];
@@ -303,37 +303,40 @@ This is what this FST does:
 | შევარდენი  | შევარდენი\<N\>\<nom\>\<sg\> |
 | ცხენმა     | ცხენი\<N\>\<erg\>\<sg\>     |
 | ზვიგენმა   | ზვიგენი\<N\>\<erg\>\<sg\>   |
-| შევარდენმა | შევარდენი\<N\>\<erg\>\<sg\> |
+| შევარდენმა  | შევარდენი\<N\>\<erg\>\<sg\> |
 
+FST can be used for
 
-Лингвистические трансдьюсеры можно использовать для
-
-- морфологического анализа
-- транслитерации/транскрипции
-- предиктивного ввода
-- в системах проверки правописания
-- в системах автоматического перевода близкородственных языков
-- в системах распознавания речи
-- и др.
-
+- morphological analysis
+- transliteration/transcription (with some limitation)
+- predict
+- predictive text
+- spellchecking
+- translation between geneologically closed languages
+- speech recognition
+- ...
 
 ## Problems while modeling morphology with FST
 
-- Проблема описаний:
-    - неполнота: то, что исследователи посчитали достаточным для грамматического описания, может быть недостаточно для моделирования; для некоторого языка может быть доступно грамматическое описание, но отсутствовать словарь и наоборот; словарь может не содержать информации про словоизменительный класс каких-то единиц, которые различаются в грамматическом описании.
-    - противоречивые источники: грамматические описания могут противоречить друг другу; грамматические описания могут противоречить словарям
-- Проблема вариативности:
-    - идиолектная
-    - диалектная
-    - связанная с какими-нибудь социолингвистическими параметрами (в первую очередь такие как пол и возраст, но можно придумать и другие)
-- Проблема неоднозначности (особенно перекошенной частотно):
-    - лексической
-    - морфологическая
-    - синтаксическая
+- Language descriptions:
+  - incompleteness
+    - whatever some researcher decided to put in the grammar may be insufficient for the modeling morphology;
+    - some languages can lack grammatical description/dictionary
+    - dictionary can contain incomplete information about inflectional classes
+  - source contradictions:
+    - grammatical descriptions can contradict to each other
+    - grammatical description can contradict to data from the dictionary
+- Variation problems:
+    - intraspeaker and interspeaker variation
+    - dialectal variation
+    - sociolinguistic variation (gender, age, social status, ...)
+- Homonymy
+    - lexical
+    - morphological
+    - syntactic
     - ...
-- Проблема идиом и суплетивизма.
-- Проблема циклов, возникающих при словообразовании.
-- Проблема морфологической сложности: для языков с бедной морфологией проще строить прсотой правиловый морфологический парсер, а не трансдьюсер
-- Технические сложности: весь софт для создания морфологических трансдьюсеров пишут под Linux, за исключением может быть пакета [`hfst-dev`](https://pypi.org/project/hfst-dev/) для Python
-- Не так просто работать совместно над одним проектом, чаще всего лучше иметь двух людей --- специалиста по языку, и специалиста по трансдьюсерам. 
-
+- Idioms (*Love **thy** neighbor*) and suppletion
+- Word Formation Cycles: (e. g. verb > masdar > verbalizer > verb)
+- Morphological complexity: it is much easier to build a simper tool for a language with a poor morphology
+- Technical complexity: all software is written for Linux (with the exception of one Python library [`hfst-dev`](https://pypi.org/project/hfst-dev/))
+- Collaboration Challenges: Working together can be difficult; pairing a computational linguist with an experienced language expert is generally preferred in most cases

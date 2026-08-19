@@ -20,46 +20,6 @@
     ]
   },
   {
-    "objectID": "02_transliteration.html",
-    "href": "02_transliteration.html",
-    "title": "2  Transliteration",
-    "section": "",
-    "text": "2.1 Georgian layout\nIt is hard to work since we have multiple orthographies to work with: Georgian, Latin, IPA, Cyrillic.\nI find it useful to install Georgian layout on your PC.\nGeorgian layout (Mac version)\nUnlike Russian layout Georgian to Latin correspondences are mostly straitforward except several pecularities:",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
-    ]
-  },
-  {
-    "objectID": "02_transliteration.html#georgian-layout",
-    "href": "02_transliteration.html#georgian-layout",
-    "title": "2  Transliteration",
-    "section": "",
-    "text": "ejective letters are mostly default, but\n\n/pʰ/ ფ (letter pani) is f\n/tʰ/ თ (letter tani) is Shift + t\n/kʰ/ ქ (letter kani) is q\n/t͡sʰ/ ც (letter tsani) is c\n/t͡ʃʰ/ ჩ (letter chini) is Shift + c\nwith exceptions of\n\n/t͡s’/ ც (letter ts’ani) is w\n/t͡ʃ’/ ჭ (letter ch’ari) is Shift + w\n\n\n/dz/ ძ (letter dzili) is Shift + z\n/ʒ/ ჟ (letter zhani) is Shift + j\n/ʃ/ შ (letter shini) is Shift + s\n/ɣ ~ ʁ/ ღ (letter ghani) is Shift + r\n/x ~ χ/ ხ (letter khani) is Shift + x\n/q’/ ყ (letter q’ari) is y",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Hauk, Bryn, and Alice C. Harris. To appear. “Batsbi.” In\nThe Caucasian Languages. An\nInternational Handbook. Volume 2.\nNakh-Daghestanian, edited by Yuri\nKoryakov and Timur Maisak. De Gruyter Mouton.\n\n\nKadagidze, Davit, and Niko Kadagidze. 1984. C’ova-Tušur-Kartul-Rusul\nLeksik’oni [Tsova-Tush-Georgian-Russian Dictionary]. (Tbilisi).",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "02_transliteration.html#russian-layout",
-    "href": "02_transliteration.html#russian-layout",
-    "title": "2  Transliteration",
-    "section": "2.2 Russian layout",
-    "text": "2.2 Russian layout\nIn case you will need to cite something from (Desheriev 1953).\n\n\n\n\n\nRussian layout (Mac version)\n\n\n\n\n\n\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika, Morfologija, Sintaksis, Leksika [The Batsbi Language: Phonetics, Morphology, Syntax, Lexicon]. Akademija Nauk SSSR, Institut Jazykoznanija.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
-    ]
-  },
-  {
     "objectID": "01_introduction_to_transducers.html",
     "href": "01_introduction_to_transducers.html",
     "title": "1  What is FST?",
@@ -67,26 +27,6 @@
     "text": "1.1 What is morphological analysis?\nFinite-state transducer can be used in order to create rule based morphological parsers. A parser built with these tools can handle both analyzing and generating forms within the same set of rules. It’s important to remember that there is no one single “correct” way to analyze morphology; it depends on what you need. Because of this, creating an FST analyzer is like create a digital representation of a grammatical description and a dictionary into a computer-readable format.\nWhat are the alternatives:\nMorphological analysis involves defining a word’s grammatical form, identifying its base root, and translating the stem meaning. For example, Georgian მინდვრის [mindvris] is linked to the gen.sg form of the stem მინდორი [mindori], which means ‘meadow’. Depending on their goals, linguists emphasize different parts; theoretical researchers typically focus more on translatings stems and don’t provide the stem itself.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is FST?</span>"
-    ]
-  },
-  {
-    "objectID": "01_introduction_to_transducers.html#what-is-fst",
-    "href": "01_introduction_to_transducers.html#what-is-fst",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "parser from SIL Fieldworks;\nnon FST rule-based approach by T. Arkhangelskiy (Arkhangelskiy 2012);\nmorphological parsers that are specific for some languages (e. g. mystem for Russian);\nNeural Networks, but adjusting those systems is much more complicated than tweaking rule-based models.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
-    ]
-  },
-  {
-    "objectID": "01_introduction_to_transducers.html#what-is-morphological-analysis",
-    "href": "01_introduction_to_transducers.html#what-is-morphological-analysis",
-    "title": "1  Introduction",
-    "section": "1.2 What is morphological analysis?",
-    "text": "1.2 What is morphological analysis?\nMorphological analysis involves defining a word’s grammatical form, identifying its base root, and translating the stem meaning. For example, Georgian მინდვრის [mindvris] is linked to the gen.sg form of the stem მინდორი [mindori], which means ‘meadow’. Depending on their goals, linguists emphasize different parts; theoretical researchers typically focus more on translatings stems and don’t provide the stem itself.",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
@@ -104,9 +44,79 @@
     "href": "01_introduction_to_transducers.html#sec-transducers",
     "title": "1  What is FST?",
     "section": "1.3 Finite-state transducers",
-    "text": "1.3 Finite-state transducers\nSo far, we have only used Finite State Machines to accept or reject input words. Now that we are adding both input and output units at each state—making it a Finite State Transducer—we need to change how we write things: list inputs before the colon, followed by outputs after it.\n\n\n\n\n\nFST for Georgian ცხენი [tskheni] ‘horse’, ზვიგენი [zvigeni] ‘shark’, შევარდენი [shevardeni] ‘falcon’\n\n\n\n\nLet’s add some morphology:\n\n\n\n\n\nFST for Georgian ცხენი [tskheni] ‘horse’, ზვიგენი [zvigeni] ‘shark’, შევარდენი [shevardeni] ‘falcon’ in nominative and ergative forms\n\n\n\n\nThis is what this FST does:\n\n\n\ninput\noutput\n\n\n\n\nცხენი\nცხენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;\n\n\nზვიგენი\nზვიგენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;\n\n\nშევარდენი\nშევარდენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;\n\n\nცხენმა\nცხენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;\n\n\nზვიგენმა\nზვიგენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;\n\n\nშევარდენმა\nშევარდენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;\n\n\n\n\n\n\n\nArkhangelskiy, T. A. 2012. “Принципы Построения Морфологического Парсера Для Разноструктурных Языков [Principles of Development of a Morphological Analyzer for Languages with Different Structures].” PhD thesis, Lomonosov Moscow State University.",
+    "text": "1.3 Finite-state transducers\nSo far, we have only used Finite State Machines to accept or reject input words. Now that we are adding both input and output units at each state—making it a Finite State Transducer—we need to change how we write things: list inputs before the colon, followed by outputs after it.\n\n\n\n\n\nFST for Georgian ცხენი [tskheni] ‘horse’, ზვიგენი [zvigeni] ‘shark’, შევარდენი [shevardeni] ‘falcon’\n\n\n\n\nLet’s add some morphology:\n\n\n\n\n\nFST for Georgian ცხენი [tskheni] ‘horse’, ზვიგენი [zvigeni] ‘shark’, შევარდენი [shevardeni] ‘falcon’ in nominative and ergative forms\n\n\n\n\nThis is what this FST does:\n\n\n\ninput\noutput\n\n\n\n\nცხენი\nცხენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;\n\n\nზვიგენი\nზვიგენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;\n\n\nშევარდენი\nშევარდენი&lt;N&gt;&lt;nom&gt;&lt;sg&gt;\n\n\nცხენმა\nცხენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;\n\n\nზვიგენმა\nზვიგენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;\n\n\nშევარდენმა\nშევარდენი&lt;N&gt;&lt;erg&gt;&lt;sg&gt;\n\n\n\nFST can be used for\n\nmorphological analysis\ntransliteration/transcription (with some limitation)\npredict\npredictive text\nspellchecking\ntranslation between geneologically closed languages\nspeech recognition\n…",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is FST?</span>"
+    ]
+  },
+  {
+    "objectID": "01_introduction_to_transducers.html#problems-while-modeling-morphology-with-fst",
+    "href": "01_introduction_to_transducers.html#problems-while-modeling-morphology-with-fst",
+    "title": "1  What is FST?",
+    "section": "1.4 Problems while modeling morphology with FST",
+    "text": "1.4 Problems while modeling morphology with FST\n\nLanguage descriptions:\n\nincompleteness\n\nwhatever some researcher decided to put in the grammar may be insufficient for the modeling morphology;\nsome languages can lack grammatical description/dictionary\ndictionary can contain incomplete information about inflectional classes\n\nsource contradictions:\n\ngrammatical descriptions can contradict to each other\ngrammatical description can contradict to data from the dictionary\n\n\nVariation problems:\n\nintraspeaker and interspeaker variation\ndialectal variation\nsociolinguistic variation (gender, age, social status, …)\n\nHomonymy\n\nlexical\nmorphological\nsyntactic\n…\n\nIdioms (Love thy neighbor) and suppletion\nWord Formation Cycles: (e. g. verb &gt; masdar &gt; verbalizer &gt; verb)\nMorphological complexity: it is much easier to build a simper tool for a language with a poor morphology\nTechnical complexity: all software is written for Linux (with the exception of one Python library hfst-dev)\nCollaboration Challenges: Working together can be difficult; pairing a computational linguist with an experienced language expert is generally preferred in most cases\n\n\n\n\n\nArkhangelskiy, T. A. 2012. “Принципы Построения Морфологического Парсера Для Разноструктурных Языков [Principles of Development of a Morphological Analyzer for Languages with Different Structures].” PhD thesis, Lomonosov Moscow State University.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is FST?</span>"
+    ]
+  },
+  {
+    "objectID": "02_transliteration.html",
+    "href": "02_transliteration.html",
+    "title": "2  Transliteration",
+    "section": "",
+    "text": "2.1 Layouts\nIt is hard to work since we have multiple orthographies to work with: Georgian, Latin, IPA, Cyrillic.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
+    ]
+  },
+  {
+    "objectID": "02_transliteration.html#georgian-layout",
+    "href": "02_transliteration.html#georgian-layout",
+    "title": "2  Transliteration",
+    "section": "",
+    "text": "ejective letters are mostly default, but\n\n/pʰ/ ფ (letter pani) is f\n/tʰ/ თ (letter tani) is Shift + t\n/kʰ/ ქ (letter kani) is q\n/t͡sʰ/ ც (letter tsani) is c\n/t͡ʃʰ/ ჩ (letter chini) is Shift + c\nwith exceptions of\n\n/t͡s’/ ც (letter ts’ani) is w\n/t͡ʃ’/ ჭ (letter ch’ari) is Shift + w\n\n\n/dz/ ძ (letter dzili) is Shift + z\n/ʒ/ ჟ (letter zhani) is Shift + j\n/ʃ/ შ (letter shini) is Shift + s\n/ɣ ~ ʁ/ ღ (letter ghani) is Shift + r\n/x ~ χ/ ხ (letter khani) is Shift + x\n/q’/ ყ (letter q’ari) is y",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
+    ]
+  },
+  {
+    "objectID": "02_transliteration.html#russian-layout",
+    "href": "02_transliteration.html#russian-layout",
+    "title": "2  Transliteration",
+    "section": "2.2 Russian layout",
+    "text": "2.2 Russian layout\nIn case you will need to cite something from (Desheriev 1953).\n\n\n\n\n\nRussian layout (Mac version)\n\n\n\n\n\n\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika, Morfologija, Sintaksis, Leksika [The Batsbi Language: Phonetics, Morphology, Syntax, Lexicon]. Akademija Nauk SSSR, Institut Jazykoznanija.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Arkhangelskiy, T. A. 2012. “Принципы Построения Морфологического\nПарсера Для Разноструктурных Языков [Principles of\nDevelopment of a Morphological Analyzer for Languages with Different\nStructures].” PhD thesis, Lomonosov Moscow State University.\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika,\nMorfologija, Sintaksis, Leksika [The Batsbi\nLanguage: Phonetics, Morphology, Syntax, Lexicon].\nAkademija Nauk SSSR, Institut Jazykoznanija.\n\n\nKadagidze, Davit, and Niko Kadagidze. 1984. C’ova-Tušur-Kartul-Rusul\nLeksik’oni\n[Tsova-Tush-Georgian-Russian\nDictionary]. Mecniereba.\n\n\nWichers Schreur, Jesse. 2025. Intensive Language\nContact in the Caucasus: The Case of\nTsova-Tush. Languages of the Caucasus 5.\nLanguage Science Press. https://doi.org/10.5281/zenodo.15275286.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "02_transliteration.html#layouts",
+    "href": "02_transliteration.html#layouts",
+    "title": "2  Transliteration",
+    "section": "",
+    "text": "2.1.1 Georgian layout\nI find it useful to install Georgian layout on your PC.\n\n\n\n\n\nGeorgian layout (Mac version)\n\n\n\n\nUnlike Russian layout Georgian to Latin correspondences are mostly straitforward except several pecularities:\n\nejective letters are mostly default, but\n\n/pʰ/ ფ (letter pani) is f\n/tʰ/ თ (letter tani) is Shift + t\n/kʰ/ ქ (letter kani) is q\n/t͡sʰ/ ც (letter tsani) is c\n/t͡ʃʰ/ ჩ (letter chini) is Shift + c\nwith exceptions of\n\n/t͡s’/ ც (letter ts’ani) is w\n/t͡ʃ’/ ჭ (letter ch’ari) is Shift + w\n\n\n/dz/ ძ (letter dzili) is Shift + z\n/ʒ/ ჟ (letter zhani) is Shift + j\n/ʃ/ შ (letter shini) is Shift + s\n/ɣ ~ ʁ/ ღ (letter ghani) is Shift + r\n/x ~ χ/ ხ (letter khani) is Shift + x\n/q’/ ყ (letter q’ari) is y\n\n\n\n2.1.2 Russian layout\nIn case you will need to cite something from (Desheriev 1953).\n\n\n\n\n\nRussian layout (Mac version)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
+    ]
+  },
+  {
+    "objectID": "02_transliteration.html#transliteration",
+    "href": "02_transliteration.html#transliteration",
+    "title": "2  Transliteration",
+    "section": "2.2 Transliteration",
+    "text": "2.2 Transliteration\nI decided to use transliteration system from (Wichers Schreur 2025):\n\n\n\nla\nmkh\n\n\n\n\na\nა\n\n\nb\nბ\n\n\nc\nც\n\n\nc’\nწ\n\n\nč\nჩ\n\n\nč’\nჭ\n\n\nd\nდ\n\n\ne\nე\n\n\ng\nგ\n\n\nğ\nღ\n\n\nh\nჰ\n\n\nħ\nჰ’\n\n\ni\nი\n\n\nj\nჲ\n\n\nk\nქ\n\n\nk’\nკ\n\n\nl\nლ\n\n\nɬ\nლ’\n\n\nm\nმ\n\n\nn\nნ\n\n\no\nო\n\n\nŏ\nო̆\n\n\np\nფ\n\n\np’\nპ\n\n\nq\nჴ\n\n\nqq\nჴჴ\n\n\nq’\nყ\n\n\nr\nრ\n\n\ns\nს\n\n\nš\nშ\n\n\nt\nთ\n\n\nt’\nტ\n\n\nt’\nტ\n\n\nu\nუ\n\n\nŭ\nუ̆\n\n\nv\nვ\n\n\nw\nჳ\n\n\nx\nხ\n\n\nz\nზ\n\n\nž\nჟ\n\n\nʒ\nძ\n\n\nǯ\nჯ\n\n\nʕ\nჵ\n\n\nɁ\nჸ\n\n\nⁿ\nჼ\n\n\n\nSo I wrote two simple scripts that can be used for transliteration.\n\nOpen a new Google Colab\nType there and run the code chunk (it is about 25 s.)\n\n!curl -s https://raw.githubusercontent.com/agricolamz/tsova_tush_fst_tools/refs/heads/main/Makefile -o Makefile; make\n\nAfter that you can transliterate back and forth, using the following command (at’t’iv means ‘fate, luck’, pħe means ‘village’)):\n\n!echo \"ატტივ\" | awk -f tsova_tush_fst_tools/mkh2la.awk\n\nat't'iv\n!echo \"pħe\" | awk -f tsova_tush_fst_tools/la2mkh.awk\n\nფჰ'ე\n\n\n\n\nDesheriev, Yunus D. 1953. Bacbijskij Jazyk. Fonetika, Morfologija, Sintaksis, Leksika [The Batsbi Language: Phonetics, Morphology, Syntax, Lexicon]. Akademija Nauk SSSR, Institut Jazykoznanija.\n\n\nWichers Schreur, Jesse. 2025. Intensive Language Contact in the Caucasus: The Case of Tsova-Tush. Languages of the Caucasus 5. Language Science Press. https://doi.org/10.5281/zenodo.15275286.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Transliteration</span>"
     ]
   }
 ]

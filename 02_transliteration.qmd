@@ -8,7 +8,9 @@ editor_options:
 
 It is hard to work since we have multiple orthographies to work with: Georgian, Latin, IPA, Cyrillic.
 
-## Georgian layout
+## Layouts
+
+### Georgian layout
 
 I find it useful to install Georgian layout on your PC.
 
@@ -37,7 +39,7 @@ Unlike Russian layout Georgian to Latin correspondences are mostly straitforward
 - /x ~ χ/ ხ (letter khani) is `Shift + x`
 - /q'/ ყ (letter q'ari) is `y`
 
-## Russian layout
+### Russian layout
 
 In case you will need to cite something from [@desheriev53].
 
@@ -47,3 +49,80 @@ In case you will need to cite something from [@desheriev53].
 
 knitr::include_graphics("images/russian-qwerty-layout.png")
 ```
+
+## Transliteration
+
+I decided to use transliteration system from [@wichersschreur2025]:
+
+| la | mkh |
+|----|-----|
+| a  | ა   |
+| b  | ბ   |
+| c  | ც   |
+| c' | წ   |
+| č  | ჩ   |
+| č' | ჭ   |
+| d  | დ   |
+| e  | ე   |
+| g  | გ   |
+| ğ  | ღ   |
+| h  | ჰ   |
+| ħ  | ჰ'  |
+| i  | ი   |
+| j  | ჲ   |
+| k  | ქ   |
+| k' | კ   |
+| l  | ლ   |
+| ɬ  | ლ'  |
+| m  | მ   |
+| n  | ნ   |
+| o  | ო   |
+| ŏ  | ო̆   |
+| p  | ფ   |
+| p' | პ   |
+| q  | ჴ   |
+| qq | ჴჴ  |
+| q' | ყ   |
+| r  | რ   |
+| s  | ს   |
+| š  | შ   |
+| t  | თ   |
+| t' | ტ   |
+| t’ | ტ   |
+| u  | უ   |
+| ŭ  | უ̆   |
+| v  | ვ   |
+| w  | ჳ   |
+| x  | ხ   |
+| z  | ზ   |
+| ž  | ჟ   |
+| ʒ  | ძ   |
+| ǯ  | ჯ   |
+| ʕ  | ჵ   |
+| Ɂ  | ჸ   |
+| ⁿ  | ჼ   |
+
+
+So I wrote two simple scripts that can be used for transliteration.
+
+- Open a new Google Colab
+- Type there and run the code chunk (it is about 25 s.)
+
+```
+!curl -s https://raw.githubusercontent.com/agricolamz/tsova_tush_fst_tools/refs/heads/main/Makefile -o Makefile; make
+```
+
+-  After that you can transliterate back and forth, using the following command (*at't'iv* means 'fate, luck', *pħe* means 'village')):
+
+```
+!echo "ატტივ" | awk -f tsova_tush_fst_tools/mkh2la.awk
+
+at't'iv
+```
+
+```
+!echo "pħe" | awk -f tsova_tush_fst_tools/la2mkh.awk
+
+ფჰ'ე
+```
+
