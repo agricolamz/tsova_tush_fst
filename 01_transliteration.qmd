@@ -128,3 +128,4 @@ at't'iv
 ფჰ'ე
 ```
 
+You need to be aware that there are multiple ways typing `ŏ`, `t'` etc. So there is a possibility that something won't work the way it intended due to this.

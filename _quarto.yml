@@ -11,6 +11,7 @@ book:
     - index.qmd
     - 01_transliteration.qmd
     - 02_introduction_to_transducers.qmd
+    - 03_dictionary.qmd
     - references.qmd
 
 callout-appearance: simple
