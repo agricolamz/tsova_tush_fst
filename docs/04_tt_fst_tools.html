@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="G. A. Moroz">
 
-<title>Tsova Tush morphological analyzer with FST</title>
+<title>4&nbsp; Tsova Tush tools – Tsova Tush morphological analyzer with FST</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,61 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -88,7 +33,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_transliteration.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./03_dictionary.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -140,7 +86,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_tt_fst_tools.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tsova Tush tools</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -170,7 +116,7 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -194,7 +140,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_tt_fst_tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./04_tt_fst_tools.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tsova Tush tools</span></span></a>
   </div>
 </li>
@@ -209,36 +155,21 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#list-of-programs" id="toc-list-of-programs" class="nav-link" data-scroll-target="#list-of-programs">List of programs</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tsova Tush morphological analyzer with FST</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tsova Tush tools</span></h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-body">
+<div class="quarto-title-meta column-page-right">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>G. A. Moroz </p>
-          </div>
-  </div>
     
   
     
@@ -249,67 +180,38 @@ div.csl-indent {
 </header>
 
 
-<section id="introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction</h1>
-<p>This is a website dedicated to the creation of morphological transducer for Tsova Tush during the <a href="https://zafier.gitpages.huma-num.fr/homepage/index.html">CauLaGe Zemo Alvani Field Research</a> (ZAFieR) Station from August 18 to 27, 2026. Materials are based on <span class="citation" data-cites="wichersschreur2025">(<a href="references.html#ref-wichersschreur2025" role="doc-biblioref">Wichers Schreur 2025</a>)</span> and <span class="citation" data-cites="kadagidze84">(<a href="references.html#ref-kadagidze84" role="doc-biblioref">Kadagidze and Kadagidze 1984</a>)</span>.</p>
-<div style="border: 2px solid; overflow: hidden; margin: 15px auto; max-width: 1575px;">
-<iframe scrolling="no" src="https://zafier.gitpages.huma-num.fr/homepage/2026.html" style="border: 0px none; margin-left: -36px; height: 2600px; margin-top: -2100px; width: 650px;">
-</iframe>
-</div>
-<section id="list-of-programs" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="list-of-programs">List of programs</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{shell}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">lexd</span> <span class="at">-V</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="49b21641" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-stdout">
-<pre><code>lexd 1.3.5</code></pre>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{shell}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">hfst-twolc</span> <span class="at">-V</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="c47d632f" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-hfst-twolc 0 (hfst 3.17.2)
-Copyright (C) 2010 University of Helsinki,
-License GPLv3: GNU GPL version 3 
-&lt;http://gnu.org/licenses/gpl.html&gt;
-This is free software: you are free to change and 
-redistribute it.
-There is NO WARRANTY, to the extent permitted by law.
-</code></pre>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{shell}</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">cg3</span> <span class="at">-V</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="79c71d36" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-stdout">
-<pre><code>VISL CG-3 Disambiguator version 1.6.8.13898
-Copyright (C) 2007-2025 GrammarSoft ApS. Licensed under GPLv3+</code></pre>
-</div>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{shell}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">-v</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="31640bcb" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-stdout">
-<pre><code>git version 2.43.0</code></pre>
-</div>
-</div>
+<p>In order to use this tools you need to open a Google Colaboratory file.</p>
+<ul>
+<li>Open you Google Drive <a href="https://drive.google.com" class="uri">https://drive.google.com</a></li>
+<li>Click <code>New</code> at the left corner</li>
+<li>In the list of possible formats choose <code>More</code> and fine Google Colaboratory</li>
+<li>In case you can’t see it, press <code>Add more application</code>, type Google Colaboratory and agree to install it to you Google Drive. Then try to open Google Colaboratory file as described in the previouse bullet.</li>
+<li>Paste the following code press the <code>Play</code> button and wait about 20-30 seconds.</li>
+</ul>
+<pre><code>!git clone https://github.com/agricolamz/tsova_tush_fst_tools.git; mv tsova_tush_fst_tools/* .; rm -d tsova_tush_fst_tools; make -s requirements</code></pre>
+<ul>
+<li>In order to transcribe from mkherduli to latin (<em>at’t’iv</em> means ‘fate, luck’)</li>
+</ul>
+<pre><code>!make -s mkherduli_transcription INPUT="ატტივ" </code></pre>
+<p>Output will be:</p>
+<pre><code>at't'iv</code></pre>
+<ul>
+<li>In order to transcribe from latin to mkherduli (<em>pħe</em> means ‘village’)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+</ul>
+<pre><code>!make latin_transcription INPUT="pħe" </code></pre>
+<p>Output will be:</p>
+<pre><code>ფჰ'ე</code></pre>
+<ul>
+<li>In order to gloss you need to type (I expect that <em>badreⁿ akʼvaⁿ</em> means ‘child’s caddle’):</li>
+</ul>
+<pre><code>!make -s glossing INPUT="badreⁿ akʼvaⁿ"</code></pre>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-kadagidze84" class="csl-entry" role="listitem">
-Kadagidze, Davit, and Niko Kadagidze. 1984. <em>C’ova-Tušur-Kartul-Rusul Leksik’oni [<span>T</span>sova-<span>T</span>ush-<span>G</span>eorgian-<span>R</span>ussian Dictionary]</em>. Mecniereba.
-</div>
-<div id="ref-wichersschreur2025" class="csl-entry" role="listitem">
-Wichers Schreur, Jesse. 2025. <em><span>I</span>ntensive Language Contact in the <span>C</span>aucasus: <span>T</span>he Case of <span>T</span>sova-<span>T</span>ush</em>. Languages of the Caucasus 5. Language Science Press. <a href="https://doi.org/10.5281/zenodo.15275286">https://doi.org/10.5281/zenodo.15275286</a>.
-</div>
-</div>
-</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>You need to be aware that there are multiple ways typing ŏ, t’ etc. If you have problems, copy from the transcription section.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -713,12 +615,15 @@ Wichers Schreur, Jesse. 2025. <em><span>I</span>ntensive Language Contact in the
     }
   });
   </script>
-<nav class="page-navigation column-body">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
+      <a href="./03_dictionary.html" class="pagination-link" aria-label="Dictionary">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dictionary</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_transliteration.html" class="pagination-link" aria-label="Transliteration">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Transliteration</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

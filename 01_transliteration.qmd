@@ -103,29 +103,3 @@ I decided to use transliteration system from [@wichersschreur2025]:
 | ʕ  | ჵ   |
 | Ɂ  | ჸ   |
 | ⁿ  | ჼ   |
-
-
-So I wrote two simple scripts that can be used for transliteration.
-
-- Open a new Google Colab
-- Type there and run the code chunk (it is about 20--25 s.)
-
-```{{shell}}
-!git clone https://github.com/agricolamz/tsova_tush_fst_tools.git; mv tsova_tush_fst_tools/* .; rm -d tsova_tush_fst_tools; make
-```
-
--  After that you can transliterate back and forth, using the following command (*at't'iv* means 'fate, luck', *pħe* means 'village')):
-
-```{{shell}}
-!make transcribe_mkherduli INPUT="ატტივ" 
-
-at't'iv
-```
-
-```{{shell}}
-!make transcribe_latin INPUT="pħe"
-
-ფჰ'ე
-```
-
-You need to be aware that there are multiple ways typing `ŏ`, `t'` etc. So there is a possibility that something won't work the way it intended due to this.
