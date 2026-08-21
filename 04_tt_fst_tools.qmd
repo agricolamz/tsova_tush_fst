@@ -55,7 +55,7 @@ akʼvaⁿ	akʼvaⁿ.N.DD
 
 ```
 
-- In order to see all possible forms for some form you can run a substring serch. In order to do it, all symbols should be separated by spaces, all tags should be sorounded by `%<...%>` (*pħit'* means 'frog'):
+- In order to see all possible forms for some lemma you can run a substring search. In order to do it, all symbols should be separated by spaces, all tags should be surrounded by `%<...%>` (*pħit'* means 'frog'):
 
 ```{.bash}
 !make -s substring_search INPUT="p ħ i t ʼ %<N%> ?*"
