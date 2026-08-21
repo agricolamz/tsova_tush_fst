@@ -2,6 +2,8 @@
 output: html_document
 editor_options: 
   chunk_output_type: console
+code-block-bg: true
+code-block-border-left: "#31BAE9"
 ---
 
 # Tsova Tush tools
@@ -14,17 +16,15 @@ In order to use this tools you need to open a Google Colaboratory file.
 - In case you can't see it, press `Add more application`, type Google Colaboratory and agree to install it to you Google Drive. Then try to open Google Colaboratory file as described in the previouse bullet.
 - Paste the following code press the `Play` button and wait about 20-30 seconds.
 
-```
+```{.bash}
 !git clone https://github.com/agricolamz/tsova_tush_fst_tools.git; mv tsova_tush_fst_tools/* .; rm -d tsova_tush_fst_tools; make -s requirements
 ```
 
 - In order to transcribe from mkherduli to latin (*at't'iv* means 'fate, luck')
 
-```
+```{.bash}
 !make -s mkherduli_transcription INPUT="ატტივ" 
 ```
-
-Output will be: 
 
 ```
 at't'iv
@@ -34,19 +34,24 @@ at't'iv
 
 [^comment]: You need to be aware that there are multiple ways typing ŏ, t' etc. If you have problems, copy from the transcription section.
 
-```
+```{.bash}
 !make latin_transcription INPUT="pħe" 
 ```
-
-Output will be: 
 
 ```
 ფჰ'ე
 ```
 
-- In order to gloss you need to type (I expect that *badreⁿ akʼvaⁿ* means 'child's caddle'):
+- In order to gloss you need to type (I expect that *badreⁿ akʼvaⁿ* means 'child's cradle'):
+
+```{.bash}
+!make -s glossing INPUT="badreⁿ akʼvaⁿ"
+```
 
 ```
-!make -s glossing INPUT="badreⁿ akʼvaⁿ"
+badreⁿ	bader.N.DD.obl-gen
+
+akʼvaⁿ	akʼvaⁿ.N.DD
+
 ```
 
