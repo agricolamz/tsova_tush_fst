@@ -26,11 +26,13 @@ library(tidyverse)
 library(DT)
 
 read_csv("data/kk_merged.csv") |> 
+  mutate(gender_la = if_else(is.na(gender_la) & sharedgrammaticalinfo %in% c("vt", "vi", "adv", "ptcp", "num", "pro interrog", "pro", "pro poss", "pro indef"), sharedgrammaticalinfo, gender_la)) |> 
   select(lemma_la, gender_la, en, ka, ru) |> 
   rename(lemma = lemma_la, 
-         gender = gender_la) |> 
-    datatable(filter = 'top', escape = FALSE, rownames = FALSE,
-              options = list(pageLength = 20, dom = 'ftop'))
+         grammar = gender_la) |> 
+  mutate(grammar = factor(grammar)) |> 
+  datatable(filter = 'top', escape = FALSE, rownames = FALSE,
+            options = list(pageLength = 20, dom = 'ftop'))
 ```
 
 ### Extended version
