@@ -1,9 +1,5 @@
 /.quarto/
 .Rproj.user
-2read*
-task_tests/*_decrypted.txt
-task_tests/secret.txt
-hws*
-
+bbl_nouns_lexicon.lexd
 **/*.quarto_ipynb
 *.~lock.*
