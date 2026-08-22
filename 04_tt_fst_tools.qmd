@@ -42,7 +42,9 @@ at't'iv
 ფჰ'ე
 ```
 
-- In order to gloss you need to type (I expect that *badreⁿ akʼvaⁿ* means 'child's cradle'):
+- In order to gloss you need to use the following command[^glossing_problems] (I expect that *badreⁿ akʼvaⁿ* means 'child's cradle'):
+
+[^glossing_problems]: This is just a preliminary tool. There are some known problems that are listed in the following file. 
 
 ```{.bash}
 !make -s glossing INPUT="badreⁿ akʼvaⁿ"
@@ -87,7 +89,7 @@ pħitʼe-go-ğ
 pħitʼ.N.BD.obl-ad-trans
 pħitʼe-go-mciⁿ
 pħitʼ.N.BD.obl-ad-term
-pħitʼe-go
+pħitʼe-gŏ
 pħitʼ.N.BD.obl-ad.lat
 pħitʼe-lo-ħ
 pħitʼ.N.BD.obl-inter-ess
@@ -97,7 +99,7 @@ pħitʼe-lo-ğ
 pħitʼ.N.BD.obl-inter-trans
 pħitʼe-lo-mciⁿ
 pħitʼ.N.BD.obl-inter-term
-pħitʼe-lo
+pħitʼe-lŏ
 pħitʼ.N.BD.obl-inter.lat
 pħitʼe-i-ħ
 pħitʼ.N.BD.obl-in-ess
