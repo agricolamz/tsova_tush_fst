@@ -12,7 +12,28 @@ library(tidyverse)
 ```
 
 
-This is a [@kadagidze84] dictionary with some additions from Diana Kakashvili and Jesse Wichers Schreur. It still need some polishing. Download in [`.csv`](https://raw.githubusercontent.com/agricolamz/tsova_tush_fst/refs/heads/main/data/kk_merged.csv) or [`.xslx`](https://raw.githubusercontent.com/agricolamz/tsova_tush_fst/refs/heads/main/data/kk_merged.xlsx) format.
+This is a [@kadagidze84] dictionary with some additions from Diana Kakashvili and Jesse Wichers Schreur. It still need some polishing. Download in [`.csv`](https://raw.githubusercontent.com/agricolamz/tsova_tush_fst/refs/heads/main/data/kk_merged.csv) or [`.xslx`](https://raw.githubusercontent.com/agricolamz/tsova_tush_fst/refs/heads/main/data/kk_merged.xlsx) format. Use the `Extended version` in order to see all fields, and don't forget to scroll to the right in order to see some hidden columns.
+
+::: {.panel-tabset}
+
+### Short version
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+library(DT)
+
+read_csv("data/kk_merged.csv") |> 
+  select(lemma_la, gender_la, en, ka, ru) |> 
+  rename(lemma = lemma_la, 
+         gender = gender_la) |> 
+    datatable(filter = 'top', escape = FALSE, rownames = FALSE,
+              options = list(pageLength = 20, dom = 'ftop'))
+```
+
+### Extended version
 
 ```{r}
 #| echo: false
@@ -26,3 +47,4 @@ read_csv("data/kk_merged.csv") |>
               options = list(pageLength = 20, dom = 'ftop'))
 ```
 
+:::
