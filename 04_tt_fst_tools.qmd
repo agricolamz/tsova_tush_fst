@@ -10,10 +10,10 @@ code-block-border-left: "#31BAE9"
 
 In order to use this tools you need to open a Google Colaboratory file. 
 
-- Open you Google Drive <https://drive.google.com>
+- Open your Google Drive <https://drive.google.com>
 - Click `New` at the left corner
-- In the list of possible formats choose `More` and fine Google Colaboratory
-- In case you can't see it, press `Add more application`, type Google Colaboratory and agree to install it to you Google Drive. Then try to open Google Colaboratory file as described in the previouse bullet.
+- In the list of possible formats choose `More` and find Google Colaboratory
+- In case you can't see it, press `Add more application`, type Google Colaboratory and agree to install it to your Google Drive. Then try to open Google Colaboratory blank file as described in the previous bullet.
 - Paste the following code press the `Play` button and wait about 20-30 seconds.
 
 ```{.bash}
