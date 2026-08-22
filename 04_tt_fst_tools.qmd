@@ -44,7 +44,7 @@ at't'iv
 
 - In order to gloss you need to use the following command[^glossing_problems] (*vašeⁿ korcʼil* means 'brother’s wedding'):
 
-[^glossing_problems]: This is just a preliminary tool. There are some known problems that are listed in the following file. 
+[^glossing_problems]: This is just a preliminary tool. There are some known problems that are listed in [the following file](https://github.com/agricolamz/tsova_tush_fst_tools/blob/main/PROBLEMS.md). 
 
 ```{.bash}
 !make -s glossing INPUT="vašeⁿ korcʼil"
