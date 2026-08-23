@@ -42,19 +42,22 @@ at't'iv
 ფჰ'ე
 ```
 
-- In order to gloss you need to use the following command[^glossing_problems] (*vašeⁿ korcʼil* means 'brother’s wedding'):
+- In order to gloss you need to use the following command[^glossing_problems] (*lapʼ kʼedlegŏ daħ ottbieⁿ* means 'They put a ladder up against the wall.', see [@wichersschreur2025: 73]):
 
 [^glossing_problems]: This is just a preliminary tool. There are some known problems that are listed in [the following file](https://github.com/agricolamz/tsova_tush_fst_tools/blob/main/PROBLEMS.md). 
 
 ```{.bash}
-!make -s glossing INPUT="vašeⁿ korcʼil"
+!make -s glossing INPUT="lapʼ kʼedlegŏ daħ ottbieⁿ."
 ```
 
 ```
-vašeⁿ	vašŏ.N.VB.obl-gen
-
-korcʼil	korcʼil.N.DD
-
+lapʼ 		 lapʼ.N.BD
+ 		 
+kʼedle-gŏ 		 kʼedel.N.JJ.obl-ad.lat
+ 		 
++? 		 daħ
+ 		 
++? 		 ottbieⁿ
 ```
 
 - In order to see all possible forms for some lemma you can run a substring search. In order to do it, all symbols should be separated by spaces, all tags should be surrounded by `%<...%>` (*kʼnat* means 'boy' or 'son'):

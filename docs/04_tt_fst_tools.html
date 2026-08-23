@@ -58,7 +58,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -235,13 +254,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> latin_transcription INPUT=<span class="st">"pħe"</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>ფჰ'ე</code></pre>
 <ul>
-<li>In order to gloss you need to use the following command<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (<em>vašeⁿ korcʼil</em> means ‘brother’s wedding’):</li>
+<li>In order to gloss you need to use the following command<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (<em>lapʼ kʼedlegŏ daħ ottbieⁿ</em> means ‘They put a ladder up against the wall.’, see <span class="citation" data-cites="wichersschreur2025">(<a href="references.html#ref-wichersschreur2025" role="doc-biblioref">Wichers Schreur 2025</a>: 73)</span>):</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> <span class="at">-s</span> glossing INPUT=<span class="st">"vašeⁿ korcʼil"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>vašeⁿ   vašŏ.N.VB.obl-gen
-
-korcʼil korcʼil.N.DD
-</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> <span class="at">-s</span> glossing INPUT=<span class="st">"lapʼ kʼedlegŏ daħ ottbieⁿ."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>lapʼ         lapʼ.N.BD
+         
+kʼedle-gŏ        kʼedel.N.JJ.obl-ad.lat
+         
++?       daħ
+         
++?       ottbieⁿ</code></pre>
 <ul>
 <li>In order to see all possible forms for some lemma you can run a substring search. In order to do it, all symbols should be separated by spaces, all tags should be surrounded by <code>%&lt;...%&gt;</code> (<em>kʼnat</em> means ‘boy’ or ‘son’):</li>
 </ul>
@@ -323,6 +345,11 @@ kʼnate
 kʼnat.N.VB.obl.ess </code></pre>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-wichersschreur2025" class="csl-entry" role="listitem">
+Wichers Schreur, Jesse. 2025. <em><span>I</span>ntensive Language Contact in the <span>C</span>aucasus: <span>T</span>he Case of <span>T</span>sova-<span>T</span>ush</em>. Languages of the Caucasus 5. Language Science Press. <a href="https://doi.org/10.5281/zenodo.15275286">https://doi.org/10.5281/zenodo.15275286</a>.
+</div>
+</div>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
