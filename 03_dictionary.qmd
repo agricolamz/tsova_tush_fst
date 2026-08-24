@@ -26,7 +26,8 @@ library(tidyverse)
 library(DT)
 
 read_csv("data/kk_merged.csv") |> 
-  mutate(gender_la = if_else(is.na(gender_la) & sharedgrammaticalinfo %in% c("vt", "vi", "adv", "ptcp", "num", "pro interrog", "pro", "pro poss", "pro indef"), sharedgrammaticalinfo, gender_la)) |> 
+  mutate(gender_la = if_else(is.na(gender_la) & sharedgrammaticalinfo %in% c("vt", "vi", "adv", "ptcp", "num", "pro interrog", "pro", "pro poss", "pro indef"), sharedgrammaticalinfo, gender_la),
+         lemma_la = str_remove_all(lemma_la, "\\d")) |> 
   select(lemma_la, gender_la, en, ka, ru) |> 
   rename(lemma = lemma_la, 
          grammar = gender_la) |> 
@@ -45,8 +46,9 @@ library(tidyverse)
 library(DT)
 
 read_csv("data/kk_merged.csv") |> 
-    datatable(filter = 'top', escape = FALSE, rownames = FALSE,
-              options = list(pageLength = 20, dom = 'ftop'))
+  mutate(lemma_la = str_remove_all(lemma_la, "\\d")) |> 
+  datatable(filter = 'top', escape = FALSE, rownames = FALSE,
+            options = list(pageLength = 20, dom = 'ftop'))
 ```
 
 :::

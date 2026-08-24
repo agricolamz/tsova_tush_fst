@@ -17,7 +17,7 @@ In order to use this tools you need to open a Google Colaboratory file.
 - Paste the following code press the `Play` button and wait about 20-30 seconds.
 
 ```{.bash}
-!git clone -q https://github.com/agricolamz/tsova_tush_fst_tools.git; mv tsova_tush_fst_tools/* .; rm -d tsova_tush_fst_tools; make -s requirements
+!git clone -q https://github.com/agricolamz/tsova_tush_fst_tools.git; mv tsova_tush_fst_tools/* .; rm -d tsova_tush_fst_tools; make -s requirements; make
 ```
 
 - In order to transcribe from mkherduli to latin you need to use the following command (*at't'iv* means 'fate, luck')
