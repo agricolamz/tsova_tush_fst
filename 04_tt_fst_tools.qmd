@@ -57,6 +57,17 @@ kʼedle-gŏ  kʼedel.N.JJ.obl-ad.lat
 +?         ottbieⁿ
 ```
 
+- In order to generate forms you need to use the following command using triangle brackets and using `>` as a morpheme boundary  (*kʼnat* means 'boy' or 'son'):
+
+```{.bash}
+!make generation INPUT="kʼnat<N><VB><pl>><gen>"
+```
+
+```
+kʼnat.N.VB.pl-gen	kʼnata-ⁿ
+kʼnat.N.VB.pl-gen	kʼnati-ⁿ
+```
+
 - In order to see all possible forms for some lemma you can run a substring search. In order to do it, all symbols should be separated by spaces, all tags should be surrounded by `%<...%>` (*kʼnat* means 'boy' or 'son'):
 
 ```{.bash}

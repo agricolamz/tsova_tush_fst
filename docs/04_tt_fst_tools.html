@@ -262,9 +262,15 @@ kʼedle-gŏ  kʼedel.N.JJ.obl-ad.lat
 +?         daħ
 +?         ottbieⁿ</code></pre>
 <ul>
+<li>In order to generate forms you need to use the following command using triangle brackets and using <code>&gt;</code> as a morpheme boundary (<em>kʼnat</em> means ‘boy’ or ‘son’):</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> generation INPUT=<span class="st">"kʼnat&lt;N&gt;&lt;VB&gt;&lt;pl&gt;&gt;&lt;gen&gt;"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>kʼnat.N.VB.pl-gen   kʼnata-ⁿ
+kʼnat.N.VB.pl-gen   kʼnati-ⁿ</code></pre>
+<ul>
 <li>In order to see all possible forms for some lemma you can run a substring search. In order to do it, all symbols should be separated by spaces, all tags should be surrounded by <code>%&lt;...%&gt;</code> (<em>kʼnat</em> means ‘boy’ or ‘son’):</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> substring_search INPUT=<span class="st">"k ʼ n a t %&lt;N%&gt; ?*"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> substring_search INPUT=<span class="st">"k ʼ n a t %&lt;N%&gt; ?*"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>hfst-compose-intersect: Warning: 
 Found output symbols (e.g. "@_IDENTITY_SYMBOL_@") in transducer in
 file &lt;stdin&gt; which will be filtered out because they are
