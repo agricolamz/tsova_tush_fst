@@ -46,6 +46,7 @@ library(tidyverse)
 library(DT)
 
 read_csv("data/kk_merged.csv") |> 
+  select(-for_sorting) |> 
   mutate(lemma_la = str_remove_all(lemma_la, "\\d")) |> 
   datatable(filter = 'top', escape = FALSE, rownames = FALSE,
             options = list(pageLength = 20, dom = 'ftop'))
