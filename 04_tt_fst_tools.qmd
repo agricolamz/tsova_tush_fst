@@ -57,7 +57,7 @@ kʼedle-gŏ  kʼedel.N.JJ.obl-ad.lat
 +?         ottbieⁿ
 ```
 
-- In order to generate forms you need to use the following command using triangle brackets and using `>` as a morpheme boundary  (*kʼnat* means 'boy' or 'son'):
+- In order to generate forms you need to use the following command using triangle brackets for each gloss and using `>` as a morpheme boundary  (*kʼnat* means 'boy' or 'son'):
 
 ```{.bash}
 !make generation INPUT="kʼnat<N><VB><pl>><gen>"
