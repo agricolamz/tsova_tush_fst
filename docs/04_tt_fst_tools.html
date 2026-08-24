@@ -246,7 +246,7 @@ div.csl-indent {
 <ul>
 <li>In order to transcribe from mkherduli to latin you need to use the following command (<em>at’t’iv</em> means ‘fate, luck’)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> <span class="at">-s</span> mkherduli_transcription INPUT=<span class="st">"ატტივ"</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> mkherduli_transcription INPUT=<span class="st">"ატტივ"</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>at't'iv</code></pre>
 <ul>
 <li>In order to transcribe from latin to mkherduli you need to use the following command (<em>pħe</em> means ‘village’)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
@@ -256,18 +256,15 @@ div.csl-indent {
 <ul>
 <li>In order to gloss you need to use the following command<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (<em>lapʼ kʼedlegŏ daħ ottbieⁿ</em> means ‘They put a ladder up against the wall.’, see <span class="citation" data-cites="wichersschreur2025">(<a href="references.html#ref-wichersschreur2025" role="doc-biblioref">Wichers Schreur 2025</a>: 73)</span>):</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> <span class="at">-s</span> glossing INPUT=<span class="st">"lapʼ kʼedlegŏ daħ ottbieⁿ."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>lapʼ         lapʼ.N.BD
-         
-kʼedle-gŏ        kʼedel.N.JJ.obl-ad.lat
-         
-+?       daħ
-         
-+?       ottbieⁿ</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> glossing INPUT=<span class="st">"lapʼ kʼedlegŏ daħ ottbieⁿ."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>lapʼ       lapʼ.N.BD
+kʼedle-gŏ  kʼedel.N.JJ.obl-ad.lat
++?         daħ
++?         ottbieⁿ</code></pre>
 <ul>
 <li>In order to see all possible forms for some lemma you can run a substring search. In order to do it, all symbols should be separated by spaces, all tags should be surrounded by <code>%&lt;...%&gt;</code> (<em>kʼnat</em> means ‘boy’ or ‘son’):</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> <span class="at">-s</span> substring_search INPUT=<span class="st">"k ʼ n a t %&lt;N%&gt; ?*"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!make</span> substring_search INPUT=<span class="st">"k ʼ n a t %&lt;N%&gt; ?*"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>hfst-compose-intersect: Warning: 
 Found output symbols (e.g. "@_IDENTITY_SYMBOL_@") in transducer in
 file &lt;stdin&gt; which will be filtered out because they are

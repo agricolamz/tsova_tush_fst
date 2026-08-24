@@ -23,7 +23,7 @@ In order to use this tools you need to open a Google Colaboratory file.
 - In order to transcribe from mkherduli to latin you need to use the following command (*at't'iv* means 'fate, luck')
 
 ```{.bash}
-!make -s mkherduli_transcription INPUT="ატტივ" 
+!make mkherduli_transcription INPUT="ატტივ" 
 ```
 
 ```
@@ -47,23 +47,20 @@ at't'iv
 [^glossing_problems]: This is just a preliminary tool. There are some known problems that are listed in [the following file](https://github.com/agricolamz/tsova_tush_fst_tools/blob/main/PROBLEMS.md). 
 
 ```{.bash}
-!make -s glossing INPUT="lapʼ kʼedlegŏ daħ ottbieⁿ."
+!make glossing INPUT="lapʼ kʼedlegŏ daħ ottbieⁿ."
 ```
 
 ```
-lapʼ 		 lapʼ.N.BD
- 		 
-kʼedle-gŏ 		 kʼedel.N.JJ.obl-ad.lat
- 		 
-+? 		 daħ
- 		 
-+? 		 ottbieⁿ
+lapʼ       lapʼ.N.BD
+kʼedle-gŏ  kʼedel.N.JJ.obl-ad.lat
++?         daħ
++?         ottbieⁿ
 ```
 
 - In order to see all possible forms for some lemma you can run a substring search. In order to do it, all symbols should be separated by spaces, all tags should be surrounded by `%<...%>` (*kʼnat* means 'boy' or 'son'):
 
 ```{.bash}
-!make -s substring_search INPUT="k ʼ n a t %<N%> ?*"
+!make substring_search INPUT="k ʼ n a t %<N%> ?*"
 ```
 
 ```
