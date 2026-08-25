@@ -42,19 +42,24 @@ at't'iv
 ფჰ'ე
 ```
 
-- In order to gloss you need to use the following command[^glossing_problems] (*lapʼ kʼedlegŏ daħ ottbieⁿ* means 'They put a ladder up against the wall.', see [@wichersschreur2025: 73]):
+- In order to gloss you need to use the following command[^glossing_problems] (*txon psarlujn xi co doɁmak’ine.* means 'We couldn’t bring water tonight.', see [@wichersschreur2025: 202]):
 
 [^glossing_problems]: This is just a preliminary tool. There are some known problems that are listed in [the following file](https://github.com/agricolamz/tsova_tush_fst_tools/blob/main/PROBLEMS.md). 
 
 ```{.bash}
-!make glossing INPUT="lapʼ kʼedlegŏ daħ ottbieⁿ."
+!make glossing INPUT="txon psarlujn xi co doɁmak’ine."
 ```
 
 ```
-lapʼ       lapʼ.N.BD
-kʼedle-gŏ  kʼedel.N.JJ.obl-ad.lat
-+?         daħ
-+?         ottbieⁿ
+txo-n      1.pl.excl-dat
+psarluj-n  psarlo.N.JJ.pl-dat
+xi         xi.N.DD.abs
+xi         xi.N.DD.obl.ess
+xi         xi.N.DD.obl.in.ess
+xi         xi.N.DD.obl.in.lat
+xi         xi.N.DD.obl.lat
++?         co
++?         doɁmakʼine
 ```
 
 - In order to generate forms you need to use the following command using triangle brackets for each gloss and using `>` as a morpheme boundary  (*kʼnat* means 'boy' or 'son'):
@@ -80,124 +85,71 @@ Found output symbols (e.g. "@_IDENTITY_SYMBOL_@") in transducer in
 file <stdin> which will be filtered out because they are
 not found on the input tapes of transducers in file
 bbl_generator.hfst.
-kʼnat
-kʼnat.N.VB
-kʼnata-ⁿ
-kʼnat.N.VB.pl-gen
-kʼnata-x
-kʼnat.N.VB.pl-cont
-kʼnati
-kʼnat.N.VB.pl
-kʼnati-v
-kʼnat.N.VB.pl-erg
-kʼnati-ⁿ
-kʼnat.N.VB.pl-gen
-kʼnati-n
-kʼnat.N.VB.pl-dat
-kʼnati-v
-kʼnat.N.VB.pl-ins
-kʼnati-x
-kʼnat.N.VB.pl-cont
-kʼnati-go-ren
-kʼnat.N.VB.pl-ad-abl
-kʼnati-go-ğ
-kʼnat.N.VB.pl-ad-trans
-kʼnati-go-mciⁿ
-kʼnat.N.VB.pl-ad-term
-kʼnati-gŏ
-kʼnat.N.VB.pl-ad.lat
-kʼnati-go
-kʼnat.N.VB.pl-ad.ess
-kʼnati-lo-ren
-kʼnat.N.VB.pl-inter-abl
-kʼnati-lo-ğ
-kʼnat.N.VB.pl-inter-trans
-kʼnati-lo-mciⁿ
-kʼnat.N.VB.pl-inter-term
-kʼnati-lŏ
-kʼnat.N.VB.pl-inter.lat
-kʼnati-lo
-kʼnat.N.VB.pl-inter.ess
-kʼnati-i-ren
-kʼnat.N.VB.pl-in-abl
-kʼnati-i-ğ
-kʼnat.N.VB.pl-in-trans
-kʼnati-i-mciⁿ
-kʼnat.N.VB.pl-in-term
-kʼnati-i
-kʼnat.N.VB.pl-in.lat
-kʼnati-i
-kʼnat.N.VB.pl-in.ess
-kʼnati-ren
-kʼnat.N.VB.pl-abl
-kʼnati-ğ
-kʼnat.N.VB.pl-trans
-kʼnati-mciⁿ
-kʼnat.N.VB.pl-term
-kʼnati-guiħ
-kʼnat.N.VB.pl-apud.lat
-kʼnati-xiⁿ
-kʼnat.N.VB.pl-apud.abl
-kʼnati-ciⁿ
-kʼnat.N.VB.pl-apud.ess
-kʼnati
-kʼnat.N.VB.pl.lat
-kʼnati
-kʼnat.N.VB.pl.ess
-kʼnate-s
-kʼnat.N.VB.obl-erg
-kʼnate-ⁿ
-kʼnat.N.VB.obl-gen
-kʼnate-n
-kʼnat.N.VB.obl-dat
-kʼnate-v
-kʼnat.N.VB.obl-ins
-kʼnate-x
-kʼnat.N.VB.obl-cont
-kʼnate-go-ren
-kʼnat.N.VB.obl-ad-abl
-kʼnate-go-ğ
-kʼnat.N.VB.obl-ad-trans
-kʼnate-go-mciⁿ
-kʼnat.N.VB.obl-ad-term
-kʼnate-gŏ
-kʼnat.N.VB.obl-ad.lat
-kʼnate-go
-kʼnat.N.VB.obl-ad.ess
-kʼnate-lo-ren
-kʼnat.N.VB.obl-inter-abl
-kʼnate-lo-ğ
-kʼnat.N.VB.obl-inter-trans
-kʼnate-lo-mciⁿ
-kʼnat.N.VB.obl-inter-term
-kʼnate-lŏ
-kʼnat.N.VB.obl-inter.lat
-kʼnate-lo
-kʼnat.N.VB.obl-inter.ess
-kʼnate-i-ren
-kʼnat.N.VB.obl-in-abl
-kʼnate-i-ğ
-kʼnat.N.VB.obl-in-trans
-kʼnate-i-mciⁿ
-kʼnat.N.VB.obl-in-term
-kʼnate-i
-kʼnat.N.VB.obl-in.lat
-kʼnate-i
-kʼnat.N.VB.obl-in.ess
-kʼnate-ren
-kʼnat.N.VB.obl-abl
-kʼnate-ğ
-kʼnat.N.VB.obl-trans
-kʼnate-mciⁿ
-kʼnat.N.VB.obl-term
-kʼnate-guiħ
-kʼnat.N.VB.obl-apud.lat
-kʼnate-xiⁿ
-kʼnat.N.VB.obl-apud.abl
-kʼnate-ciⁿ
-kʼnat.N.VB.obl-apud.ess
-kʼnate
-kʼnat.N.VB.obl.lat
-kʼnate
-kʼnat.N.VB.obl.ess
+
+kʼnata-ⁿ        kʼnat.N.VB.pl-gen
+kʼnata-x        kʼnat.N.VB.pl-cont
+kʼnate-ciⁿ      kʼnat.N.VB.obl-apud.ess
+kʼnate-ğ        kʼnat.N.VB.obl-in.trans
+kʼnate-ğ        kʼnat.N.VB.obl-trans
+kʼnate-go-ğ     kʼnat.N.VB.obl-ad-trans
+kʼnate-go       kʼnat.N.VB.obl-ad.ess
+kʼnate-gŏ       kʼnat.N.VB.obl-ad.lat
+kʼnate-go-mciⁿ  kʼnat.N.VB.obl-ad-term
+kʼnate-go-reⁿ   kʼnat.N.VB.obl-ad-abl
+kʼnate-guiħ     kʼnat.N.VB.obl-apud.lat
+kʼnate-i-ğ      kʼnat.N.VB.obl-in-trans
+kʼnate-i        kʼnat.N.VB.obl-in.ess
+kʼnate-i        kʼnat.N.VB.obl-in.lat
+kʼnate-i-mciⁿ   kʼnat.N.VB.obl-in-term
+kʼnate-i-reⁿ    kʼnat.N.VB.obl-in-abl
+kʼnate          kʼnat.N.VB.obl.ess
+kʼnate          kʼnat.N.VB.obl.in.ess
+kʼnate          kʼnat.N.VB.obl.in.lat
+kʼnate          kʼnat.N.VB.obl.lat
+kʼnate-lo-ğ     kʼnat.N.VB.obl-inter-trans
+kʼnate-lo       kʼnat.N.VB.obl-inter.ess
+kʼnate-lŏ       kʼnat.N.VB.obl-inter.lat
+kʼnate-lo-mciⁿ  kʼnat.N.VB.obl-inter-term
+kʼnate-lo-reⁿ   kʼnat.N.VB.obl-inter-abl
+kʼnate-mciⁿ     kʼnat.N.VB.obl-in.term
+kʼnate-mciⁿ     kʼnat.N.VB.obl-term
+kʼnate-n        kʼnat.N.VB.obl-dat
+kʼnate-ⁿ        kʼnat.N.VB.obl-gen
+kʼnate-reⁿ      kʼnat.N.VB.obl-abl
+kʼnate-reⁿ      kʼnat.N.VB.obl-in.abl
+kʼnate-s        kʼnat.N.VB.obl-erg
+kʼnate-v        kʼnat.N.VB.obl-ins
+kʼnate-xiⁿ      kʼnat.N.VB.obl-apud.abl
+kʼnate-x        kʼnat.N.VB.obl-cont
+kʼnati-ciⁿ      kʼnat.N.VB.pl-apud.ess
+kʼnati-ğ        kʼnat.N.VB.pl-in.trans
+kʼnati-ğ        kʼnat.N.VB.pl-trans
+kʼnati-go-ğ     kʼnat.N.VB.pl-ad-trans
+kʼnati-go       kʼnat.N.VB.pl-ad.ess
+kʼnati-gŏ       kʼnat.N.VB.pl-ad.lat
+kʼnati-go-mciⁿ  kʼnat.N.VB.pl-ad-term
+kʼnati-go-reⁿ   kʼnat.N.VB.pl-ad-abl
+kʼnati-guiħ     kʼnat.N.VB.pl-apud.lat
+kʼnati-i-mciⁿ   kʼnat.N.VB.pl-in-term
+kʼnati          kʼnat.N.VB.abs.pl
+kʼnati          kʼnat.N.VB.pl.ess
+kʼnati          kʼnat.N.VB.pl.in.ess
+kʼnati          kʼnat.N.VB.pl.in.lat
+kʼnati          kʼnat.N.VB.pl.lat
+kʼnati-lo-ğ     kʼnat.N.VB.pl-inter-trans
+kʼnati-lo       kʼnat.N.VB.pl-inter.ess
+kʼnati-lŏ       kʼnat.N.VB.pl-inter.lat
+kʼnati-lo-mciⁿ  kʼnat.N.VB.pl-inter-term
+kʼnati-lo-reⁿ   kʼnat.N.VB.pl-inter-abl
+kʼnati-mciⁿ     kʼnat.N.VB.pl-in.term
+kʼnati-mciⁿ     kʼnat.N.VB.pl-term
+kʼnati-n        kʼnat.N.VB.pl-dat
+kʼnati-ⁿ        kʼnat.N.VB.pl-gen
+kʼnati-reⁿ      kʼnat.N.VB.pl-abl
+kʼnati-reⁿ      kʼnat.N.VB.pl-in.abl
+kʼnati-v        kʼnat.N.VB.pl-erg
+kʼnati-v        kʼnat.N.VB.pl-ins
+kʼnati-xiⁿ      kʼnat.N.VB.pl-apud.abl
+kʼnati-x        kʼnat.N.VB.pl-cont
+kʼnat           kʼnat.N.VB.abs
 ```
