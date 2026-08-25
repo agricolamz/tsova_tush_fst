@@ -1,3 +1,9 @@
+---
+code-block-bg: true
+code-block-border-left: "#31BAE9"
+---
+
+
 # Introduction {.unnumbered}
 
 This is a website dedicated to the creation of morphological transducer for Tsova Tush during the [CauLaGe Zemo Alvani Field Research](https://zafier.gitpages.huma-num.fr/homepage/index.html) (ZAFieR) Station from August 18 to 27, 2026. Materials are based on [@wichersschreur2025] and [@kadagidze84].
@@ -10,7 +16,7 @@ This is a website dedicated to the creation of morphological transducer for Tsov
 
 ## List of programs {.unnumbered}
 
-```{{shell}}
+```{.bash}
 lexd -V
 ```
 
@@ -18,7 +24,7 @@ lexd -V
 !lexd -V
 ```
 
-```{{shell}}
+```{.bash}
 hfst-twolc -V
 ```
 
@@ -26,7 +32,7 @@ hfst-twolc -V
 !hfst-twolc -V
 ```
 
-```{{shell}}
+```{.bash}
 cg3 -V
 ```
 
@@ -34,10 +40,18 @@ cg3 -V
 !cg3 -V
 ```
 
-```{{shell}}
+```{.bash}
 git -v
 ```
 
 ```{python}
 !git -v
+```
+
+```{.bash}
+awk --version
+```
+
+```{python}
+!awk --version
 ```
